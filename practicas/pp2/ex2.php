@@ -29,9 +29,9 @@
             display: flex;
             flex-wrap: wrap;
             gap: 10px;  
-            width: 100%;  
+            width: fit-content;  
             height: fit-content;
-            border: 1px, dotted, brown;
+            border: 2px, dotted, brown;
             padding: 10px;
             gap: 20px;
             justify-content: center;

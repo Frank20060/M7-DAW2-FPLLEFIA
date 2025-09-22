@@ -26,7 +26,7 @@
             gap: 10px;  
             width: 100%;  
             height: fit-content;
-            border: 1px, dotted, brown;
+            border: 2px, dotted, brown;
             padding: 5px;
             font-size: 1.5em;
             
