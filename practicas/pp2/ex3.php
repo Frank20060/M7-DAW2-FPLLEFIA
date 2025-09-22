@@ -21,50 +21,40 @@
             color: brown;
             font-size: 40px;
         }
-        .par, .inpar{
-
-            width: 100px ;
-            height: 100px ;
+        .par, .impar{
+            width: 100px;
+            height: 100px;
             justify-items: center;
-           align-items: center;
-            
+            align-items: center;
         }
-        .par p, .inpar p{
-
+        .par p, .impar p{
             margin: 10px;
             font-size: 60px;
-           
-            
         }
         .par{
-
-            border: 10px, solid, red;
-            
+            border: 10px solid red;
         }
-        .inpar{
-
-            border: 10px, solid, blue;
-            
+        .impar{
+            border: 10px solid blue;
         }
 
     </style>
 </head>
 <body>
 
-    <h1>Numero aleatorio ¿PAR O INPAR?</h1>
-    <h3>Se genera un numero del 1 al 100 y determinamos si es par (borde rojo) o inpar (borde azul)</h3>
+    <h1>Número aleatorio ¿PAR O IMPAR?</h1>
+    <h3>Se genera un número del 1 al 100 y determinamos si es par (borde rojo) o impar (borde azul)</h3>
     <?php
     
         $numAleatorio = rand( 1, 100);
         if ($numAleatorio % 2 == 0){
-
             echo"
             <div class='par'>
                 <p>$numAleatorio</p>
             </div>";
         }else{
             echo"
-            <div class='inpar'>
+            <div class='impar'>
                 <p>$numAleatorio</p>  
             </div>";
         }
