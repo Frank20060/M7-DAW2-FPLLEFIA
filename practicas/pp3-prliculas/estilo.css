@@ -1,0 +1,123 @@
+body{
+
+    background-color: rgb(180, 180, 180);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    
+
+}
+header{
+
+    justify-items: center;
+    text-align: center;
+    color:white;
+    text-shadow: 0 8px 15px black;
+    font-size: 1.4em;
+
+
+}
+
+
+
+/* Contenedor principal de la cartelera de películas */
+.cartelera {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Tarjeta individual de cada película */
+.card {
+    position: relative;
+    width: 220px;
+    height: 330px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px black;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+/* Efecto de escala al pasar el ratón por la tarjeta */
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Imagen de la película dentro de la tarjeta */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Capa oscura que aparece al hacer hover sobre la tarjeta para mostrar información adicional */
+.overlay {
+    position: absolute;
+    justify-items: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 20, 20, 0.95);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+
+}
+
+/* Hace visible la capa .overlay al hacer hover sobre la tarjeta */
+.card:hover .overlay {
+    opacity: 1;
+}
+
+/* Título dentro de la capa overlay */
+.overlay h2 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #f1c40f;
+}
+
+/* Contenedor de los horarios de la película */
+.horarios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+/* Cada horario individual dentro del contenedor de horarios */
+.horarios div {
+    background: #333;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* Contenedor de los botones de acción (trailer, más info, etc.) */
+.botones {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Estilos para los botones de acción */
+.botones button {
+    background-color: #f39c12;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Efecto hover para los botones de acción */
+.botones button:hover {
+    background-color: #e67e22;
+}
