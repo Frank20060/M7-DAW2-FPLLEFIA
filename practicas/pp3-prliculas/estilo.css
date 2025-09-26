@@ -79,7 +79,8 @@ header{
 .overlay h2 {
     margin: 0 0 10px;
     font-size: 18px;
-    color: #f1c40f;
+    color:  rgb(180, 180, 180);
+    text-shadow: 0 8px 15px black;
 }
 
 /* Contenedor de los horarios de la película */
@@ -107,11 +108,12 @@ header{
 
 /* Estilos para los botones de acción */
 .botones button {
-    background-color: #f39c12;
+    background-color:  rgb(180, 180, 180);
     border: none;
     padding: 6px 10px;
     border-radius: 4px;
     color: white;
+    text-shadow: 0 8px 15px black;
     font-weight: bold;
     cursor: pointer;
     transition: background 0.3s;
@@ -119,5 +121,6 @@ header{
 
 /* Efecto hover para los botones de acción */
 .botones button:hover {
-    background-color: #e67e22;
+    background-color: #ffffff;
+    text-shadow: 0 8px 15px black;
 }

@@ -16,7 +16,7 @@
         <div class="cartelera">
         <?php
         include('peliculas.php');
-
+        $i = 0;
         foreach($peliculas as $peli){
             echo "
             <div class='card'>
@@ -33,13 +33,15 @@
             echo "
                     </div>
                     <div class='botones'>
-                        <a href='trailer.php'><button>Trailer</button></a> 
-                        <a href='detalles.php'><button>Mas info</button></a> 
+                        <a href='trailer.php?id=$i'><button>Trailer</button></a> 
+                        <a href='detalles.php?id=$i'><button>Mas info</button></a> 
                     </div>
                 </div>
             </div>
             ";
+            $i++;
         }
+        
         ?>
     </div>
 
