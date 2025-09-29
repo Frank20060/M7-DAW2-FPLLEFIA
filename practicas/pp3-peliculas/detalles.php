@@ -22,9 +22,9 @@
                 <div class='derecha'>
                     <h1>" . $peliculas[$i]['nombre'] . "</h1>
                     <p> " . $peliculas[$i]['sinopsis'] . " </p>
-                    <p><strong>Duración: </strong>" . $peliculas[$i]['duracion'] . "</p>
-                    <p><strong>Director: </strong>" . $peliculas[$i]['director'] . "</p>
-                    <p><strong>Reparto: </strong>";
+                    <p><span>Duración: </span>" . $peliculas[$i]['duracion'] . "</p>
+                    <p><span>Director: </span>" . $peliculas[$i]['director'] . "</p>
+                    <p><span>Reparto: </span>";
                     foreach($peliculas[$i]['reparto'] as $actor){
 
                         echo $actor . ", ";
@@ -32,8 +32,8 @@
                     };
                     echo "<p>";
             echo"
-                <p><strong>Calificacion: </strong>" . $peliculas[$i]['calificacion'] . "</p>   
-                <p><strong>Género: </strong>" . $peliculas[$i]['genero'] . "</p> 
+                <p><span>Calificacion: </span>" . $peliculas[$i]['calificacion'] . "</p>   
+                <p><span>Género: </span>" . $peliculas[$i]['genero'] . "</p> 
             ";
 
             ///Horarios 

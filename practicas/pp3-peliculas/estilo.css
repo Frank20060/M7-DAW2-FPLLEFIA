@@ -1,6 +1,6 @@
 body{
 
-    background-color: rgb(180, 180, 180);
+    background-color:#121212;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
     
@@ -10,8 +10,8 @@ header{
 
     justify-items: center;
     text-align: center;
-    color:rgb(0, 0, 0);
-    text-shadow: 0 8px 15px black;
+    color:#FFFFFF;
+    text-shadow: 0 2px 5px #E50914;
     font-size: 1.4em;
 
 
@@ -31,7 +31,7 @@ header{
     height: 330px;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 8px 15px black;
+    box-shadow: 0 2px 5px #E50914;
     cursor: pointer;
     transition: transform 0.3s;
 }
@@ -74,7 +74,7 @@ header{
 .overlay h2 {
     margin: 0 0 10px;
     font-size: 18px;
-    color:  rgb(180, 180, 180);
+    color:  #E50914;
     text-shadow: 0 8px 15px black;
 }
 
@@ -100,7 +100,7 @@ header{
 
 /* Estilos para los botones de acción */
 .botones button {
-    background-color:  rgb(180, 180, 180);
+    background-color:  #E50914;
     border: none;
     padding: 6px 10px;
     border-radius: 4px;
@@ -125,11 +125,18 @@ header{
     flex-direction: row;
     gap: 40px;
     font-size: 1.4em;
+    color: #FFFFFF;
 
 }
 .mainDetalles h1{
 
-    text-shadow: 0 8px 15px rgb(88, 88, 88);
+    text-shadow: 0 2px 5px #E50914;
+
+}
+.mainDetalles span{
+
+    color: #E50914;
+    font-weight: bold;
 
 }
 .izquierda{
@@ -143,7 +150,7 @@ header{
 
     width: 500px;
     border-radius: 4px;
-    box-shadow: 0 2px 5px black;
+    box-shadow: 0 2px 5px rgb(44, 44, 44);
 
 }
 .izquierda button{
@@ -151,7 +158,7 @@ header{
     width: 100%;
     height: 4em;
     border: 1px solid black;
-     box-shadow: 0 2px 5px black;
+    box-shadow: 0 2px 5px black;
     border-radius: 4px;
     background-color: #333;
     color: white;
@@ -159,6 +166,9 @@ header{
     font-weight: bold;
     cursor: pointer;
     transition: background 0.3s;
+}
+.mainDetalles button:hover{
+    box-shadow: 0 2px 5px #E50914;
 }
 .horariosDetalles{
 
@@ -210,5 +220,8 @@ header{
     font-weight: bold;
     cursor: pointer;
     transition: background 0.3s;
+}
+.mainTrailer button:hover{
+    box-shadow: 0 2px 5px #E50914;
 }
 
