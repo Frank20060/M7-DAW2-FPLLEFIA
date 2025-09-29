@@ -10,16 +10,13 @@ header{
 
     justify-items: center;
     text-align: center;
-    color:white;
+    color:rgb(0, 0, 0);
     text-shadow: 0 8px 15px black;
     font-size: 1.4em;
 
 
 }
 
-
-
-/* Contenedor principal de la cartelera de películas */
 .cartelera {
     display: flex;
     flex-wrap: wrap;
@@ -28,7 +25,6 @@ header{
     padding: 20px;
 }
 
-/* Tarjeta individual de cada película */
 .card {
     position: relative;
     width: 220px;
@@ -75,7 +71,6 @@ header{
     opacity: 1;
 }
 
-/* Título dentro de la capa overlay */
 .overlay h2 {
     margin: 0 0 10px;
     font-size: 18px;
@@ -83,7 +78,6 @@ header{
     text-shadow: 0 8px 15px black;
 }
 
-/* Contenedor de los horarios de la película */
 .horarios {
     display: flex;
     flex-wrap: wrap;
@@ -91,7 +85,6 @@ header{
     margin-bottom: 10px;
 }
 
-/* Cada horario individual dentro del contenedor de horarios */
 .horarios div {
     background: #333;
     padding: 4px 8px;
@@ -99,7 +92,6 @@ header{
     font-size: 12px;
 }
 
-/* Contenedor de los botones de acción (trailer, más info, etc.) */
 .botones {
     display: flex;
     gap: 10px;
@@ -119,8 +111,104 @@ header{
     transition: background 0.3s;
 }
 
-/* Efecto hover para los botones de acción */
-.botones button:hover {
-    background-color: #ffffff;
-    text-shadow: 0 8px 15px black;
+
+
+
+
+
+
+/*  Detalles   */
+
+.mainDetalles{
+
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    font-size: 1.4em;
+
 }
+.mainDetalles h1{
+
+    text-shadow: 0 8px 15px rgb(88, 88, 88);
+
+}
+.izquierda{
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+.izquierda img{
+
+    width: 500px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px black;
+
+}
+.izquierda button{
+
+    width: 100%;
+    height: 4em;
+    border: 1px solid black;
+     box-shadow: 0 2px 5px black;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.horariosDetalles{
+
+    display: flex;
+    gap : 5px;
+
+}
+.horariosDetalles div{
+
+    background-color: #6868687c;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px black;
+
+}
+
+
+/*  Trailer */
+
+.mainTrailer{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+
+}
+.mainTrailer h1{
+    
+    text-shadow: 0 8px 15px rgb(88, 88, 88);
+
+}
+.mainTrailer iframe{
+
+    box-shadow: 0 2px 5px black;
+
+}
+.derecha button, .mainTrailer button{
+    margin-top: 20px;
+    width: 4em;
+    height: 4em;
+    border: 1px solid black;
+    box-shadow: 0 2px 5px black;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+

@@ -11,7 +11,7 @@ $peliculas = [
         'reparto' => ['Tom Holland', 'Zendaya', 'Benedict Cumberbatch'],
         'calificacion' => '+12',
         'genero' => 'Acción, Aventura, Ciencia Ficción',
-        'trailer' => 'https://www.youtube.com/watch?v=JfVOs4VSpmA'
+        'trailer' => 'https://www.youtube.com/embed/JfVOs4VSpmA?si=cHzfEGBc90BaWZ_i&autoplay=1'
     ],
     [
         'nombre' => 'Dune',
@@ -23,7 +23,7 @@ $peliculas = [
         'reparto' => ['Timothée Chalamet', 'Oscar Isaac', 'Zendaya'],
         'calificacion' => '+12',
         'genero' => 'Ciencia Ficción, Aventura',
-        'trailer' => 'https://www.youtube.com/watch?v=n9xhJrPXop4'
+        'trailer' => 'https://www.youtube.com/embed/n9xhJrPXop4?si=jQwDoGjpqKimNRUw&autoplay=1'
     ],
     [
         'nombre' => 'Matrix Resurrections',
@@ -35,7 +35,7 @@ $peliculas = [
         'reparto' => ['Keanu Reeves', 'Carrie-Anne Moss', 'Yahya Abdul-Mateen II'],
         'calificacion' => '+16',
         'genero' => 'Ciencia Ficción, Acción',
-        'trailer' => 'https://www.youtube.com/watch?v=fT1i0fL9OWg'
+        'trailer' => 'https://www.youtube.com/embed/IgYs_NDyaLs?si=B1TI6mjqBmVzxt-f&autoplay=1'
     ],
     [
         'nombre' => 'No Time to Die',
@@ -47,7 +47,7 @@ $peliculas = [
         'reparto' => ['Daniel Craig', 'Rami Malek', 'Lea Seydoux'],
         'calificacion' => '+16',
         'genero' => 'Acción, Espionaje, Suspense',
-        'trailer' => 'https://www.youtube.com/watch?v=vw2FOYjCk5M'
+        'trailer' => 'https://www.youtube.com/embed/BIhNsAtPbPI?si=bAjzYgcEnAPybzja&autoplay=1'
     ],
     [
         'nombre' => 'The Suicide Squad',
@@ -59,7 +59,7 @@ $peliculas = [
         'reparto' => ['Margot Robbie', 'Idris Elba', 'John Cena'],
         'calificacion' => '+16',
         'genero' => 'Acción, Comedia, Superhéroes',
-        'trailer' => 'https://www.youtube.com/watch?v=JuDLepNa7hw'
+        'trailer' => 'https://www.youtube.com/embed/CmRih_VtVAs?si=x1ISKFUpZX9a9W5m&autoplay=1'
     ],
     [
         'nombre' => 'A Quiet Place Part II',
@@ -71,7 +71,7 @@ $peliculas = [
         'reparto' => ['Emily Blunt', 'Cillian Murphy', 'John Krasinski'],
         'calificacion' => '+16',
         'genero' => 'Terror, Suspense',
-        'trailer' => 'https://www.youtube.com/watch?v=WR7cc5t7tv8'
+        'trailer' => 'https://www.youtube.com/embed/BpdDN9d9Jio?si=uqo7lshFFjHLb9db&autoplay=1'
     ],
     [
         'nombre' => 'Jungle Cruise',
@@ -83,7 +83,7 @@ $peliculas = [
         'reparto' => ['Dwayne Johnson', 'Emily Blunt', 'Jack Whitehall'],
         'calificacion' => '+7',
         'genero' => 'Aventura, Comedia, Fantasía',
-        'trailer' => 'https://www.youtube.com/watch?v=wnK-kvFtye4'
+        'trailer' => 'https://www.youtube.com/embed/k3zJZXbAPpE?si=m0Nr36u4VOulvJ3Q&autoplay=1'
     ],
     [
         'nombre' => 'The Green Knight',
@@ -95,7 +95,7 @@ $peliculas = [
         'reparto' => ['Dev Patel', 'Alicia Vikander', 'Joel Edgerton'],
         'calificacion' => '+16',
         'genero' => 'Aventura, Fantasía, Drama',
-        'trailer' => 'https://www.youtube.com/watch?v=Myh6kH3Tc0Q'
+        'trailer' => 'https://www.youtube.com/embed/sS6ksY8xWCY?si=YnRNh9kHY6p3J20j&autoplay=1'
     ],
     [
         'nombre' => 'Luca',
@@ -107,7 +107,7 @@ $peliculas = [
         'reparto' => ['Jacob Tremblay', 'Jack Dylan Grazer', 'Emma Berman'],
         'calificacion' => '+7',
         'genero' => 'Animación, Aventura, Comedia',
-        'trailer' => 'https://www.youtube.com/watch?v=YdW1By2pNFA'
+        'trailer' => 'https://www.youtube.com/embed/kw50vQA1S-o?si=kbmi54z9K_5F-Biy&autoplay=1'
     ],
     [
         'nombre' => 'Black Widow',
@@ -119,7 +119,7 @@ $peliculas = [
         'reparto' => ['Scarlett Johansson', 'Florence Pugh', 'David Harbour'],
         'calificacion' => '+12',
         'genero' => 'Acción, Aventura, Superhéroes',
-        'trailer' => 'https://www.youtube.com/watch?v=ybji16uC6YQ'
+        'trailer' => 'https://www.youtube.com/embed/ybji16u608U?si=hsFE1ltTdcG0fJgU&autoplay=1'
     ]
 ];
 
