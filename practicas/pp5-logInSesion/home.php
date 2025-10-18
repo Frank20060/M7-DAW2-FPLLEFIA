@@ -45,10 +45,7 @@ if (($nombre || $habil  || $img )) {
     
     <?php
         include 'header.php';
-        echo '<h1>'. $userName .'</h1>';
-            
-
-
+        
     ?>
     <form action="home.php" method="post">
         <h2>Introduce un personaje que te guste</h2>

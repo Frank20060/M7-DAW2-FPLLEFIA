@@ -21,9 +21,9 @@ session_start();
         if (!empty($_SESSION['personajes']) && is_array($_SESSION['personajes'])) {
             foreach ($_SESSION['personajes'] as $personaje) {
                 // sanitizar antes de mostrar
-                $nombre = htmlspecialchars($personaje['nombrePersonaje'] ?? '', ENT_QUOTES, 'UTF-8');
-                $habil = htmlspecialchars($personaje['habilidadPersonaje'] ?? '', ENT_QUOTES, 'UTF-8');
-                $img   = htmlspecialchars($personaje['urlImgPersonaje'] ?? '', ENT_QUOTES, 'UTF-8');
+                $nombre = $personaje['nombrePersonaje'];
+                $habil = $personaje['habilidadPersonaje'];
+                $img   = $personaje['urlImgPersonaje'] ;
 
                 echo '<article>';
                 echo '<h2>' . $nombre . '</h2>';
