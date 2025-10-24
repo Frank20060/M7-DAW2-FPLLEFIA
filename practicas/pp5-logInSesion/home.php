@@ -3,16 +3,7 @@ session_start();
 $userName  = trim($_POST['userName'] ?? '');
 $userPass = trim($_POST['userpass'] ?? '');
 include 'usuarios.php';
-$aux = false;
-foreach ($usuarios as $usuario) {
-    if ($userUser == $usuario['user'] && $userPass == $usuario['password']) {
-        $aux = true;
-    }
-}
-if(isset($_SESSION['user'])){$aux = true;}
-if(!$aux){
-    header("Location: logout.php?incorrecto=true");  
-}
+
 
 
 $_SESSION['user'] = $userName;

@@ -1,11 +1,9 @@
 <?php
-
-
+session_start();
 // Verifica si el usuario ha iniciado sesión; si no, redirige a login.php.
 
-// Verifica el rol del usuario
 
-// Obtener la lista de libros desde la sesión
+
 
 ?>
 

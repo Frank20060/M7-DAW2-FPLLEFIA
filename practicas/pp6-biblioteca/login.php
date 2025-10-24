@@ -7,12 +7,35 @@ $usuarios = [
     ["username" => "reader", "password" => "readerpass", "role" => "lector"]
 ];
 
-// Procesamiento del formulario.
+$_GET['username'] = $username;
+$_GET['pasw'] = $pasw;
+$_GET['img'] = $img;
+
+$credenciales = [
+    "username" => $username,
+    "pasw" => $pasw,
+    "img" => $img
+];
+
+foreach ($usuarios as $usuario) {
+    if ($username == $usuario['username'] && $pasw == $usuario['password']) {
+        $_SESSION['credenciales'] = $credenciales;
+        header('Location: home.php');
+    }else{
+        header("Location: logout.php?incorrecto=true");  
+    }
+}
+
+if(!$aux){
+    header("Location: logout.php?incorrecto=true");  
+}
+
+// Verifica el rol del usuario
+
+// Obtener la lista de libros desde la sesión
 
 
-    // Validación de credenciales.
-   
-  
+
 
 ?>
 
@@ -36,23 +59,22 @@ $usuarios = [
         <div class="signin">
             <div class="content text-center">
                 <h2>Inicia sesión</h2>
-                <form method="xxxxx" action="login.php">
+                <form method="get" action="login.php">
                     <div class="inputBox ">
-                        <input class="p-2 m-2" placeholder="Username" type="text" name="" required>
+                        <input class="p-2 m-2" placeholder="Username" type="text" name="username" required>
                        
                     </div>
                     <div class="inputBox ">
-                        <input class="p-2 m-2" placeholder="Password" type="password" name="" required>
+                        <input class="p-2 m-2" placeholder="Password" type="password" name="pasw" required>
                        
                     </div>
                     <div class="inputBox ">
-                        <input class="p-2 m-2" placeholder="Foto de perfil" type="text" name="" required>
+                        <input class="p-2 m-2" placeholder="Foto de perfil" type="text" name="img" required>
                        
                     </div>
                     <?php if (!empty($error)) : ?>
                         <div class="alert alert-danger"><?= $error ?></div>
                     <?php endif; ?>
-                    
                     <div class="inputBox">
                         <input class="bg-warning btn mt-2" type="submit" value="Iniciar">
                     </div>
