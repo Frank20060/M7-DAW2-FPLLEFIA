@@ -10,8 +10,8 @@ $usuarios = [
 
 
 // Verifica el rol del usuario
-if(isset($_POST['incorrecto'])){
-    if($_POST['incorrecto']){
+if(isset($_GET['incorrecto'])){
+    if($_GET['incorrecto']){
         $error = 'Error en las credenciales';
     }
 }
