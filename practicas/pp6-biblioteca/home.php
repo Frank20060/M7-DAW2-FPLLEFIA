@@ -2,6 +2,12 @@
 session_start();
 // Verifica si el usuario ha iniciado sesión; si no, redirige a login.php.
 
+if(!isset($_SESSION['credenciales'])){
+    // Si no hay sesión activa, redirige a login.php
+    header("Location: login.php");
+    exit(); 
+}
+$usuario = $_SESSION['credenciales'];
 
 
 

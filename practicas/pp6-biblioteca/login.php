@@ -2,38 +2,48 @@
 session_start();
 
 // Datos de usuario predefinidos (esto normalmente se obtendría de una base de datos).
+
 $usuarios = [
     ["username" => "admin", "password" => "adminpass", "role" => "admin"],
     ["username" => "reader", "password" => "readerpass", "role" => "lector"]
 ];
 
-$_GET['username'] = $username;
-$_GET['pasw'] = $pasw;
-$_GET['img'] = $img;
-
-$credenciales = [
-    "username" => $username,
-    "pasw" => $pasw,
-    "img" => $img
-];
-
-foreach ($usuarios as $usuario) {
-    if ($username == $usuario['username'] && $pasw == $usuario['password']) {
-        $_SESSION['credenciales'] = $credenciales;
-        header('Location: home.php');
-    }else{
-        header("Location: logout.php?incorrecto=true");  
-    }
-}
-
-if(!$aux){
-    header("Location: logout.php?incorrecto=true");  
-}
 
 // Verifica el rol del usuario
-
+if(isset($_POST['incorrecto'])){
+    if($_POST['incorrecto']){
+        $error = 'Error en las credenciales';
+    }
+}
 // Obtener la lista de libros desde la sesión
 
+if(isset($_POST['username']) && isset($_POST['pasw'])){
+    $username = trim( $_POST['username']);
+    $pasw = trim($_POST['pasw'] );
+    $img =  trim($_POST['img']);
+    $login = false;
+
+    
+    foreach ($usuarios as $usuario) {
+        if ($username == $usuario['username'] && $pasw == $usuario['password']) {
+            $credenciales = [
+                "username" => $username,
+                "img" => $img,
+                "rol" => $usuario['role']
+            ];
+
+            $_SESSION['credenciales'] = $credenciales;
+            $login = true;
+            break;
+        }
+    }
+    if(!$login){
+        header("Location: login.php?incorrecto=true");
+    }else{
+        header('Location: home.php?loged=true');
+    }
+
+}
 
 
 
@@ -59,7 +69,7 @@ if(!$aux){
         <div class="signin">
             <div class="content text-center">
                 <h2>Inicia sesión</h2>
-                <form method="get" action="login.php">
+                <form method="POST" action="login.php">
                     <div class="inputBox ">
                         <input class="p-2 m-2" placeholder="Username" type="text" name="username" required>
                        
