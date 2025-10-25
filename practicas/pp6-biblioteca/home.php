@@ -1,6 +1,10 @@
 <?php
 session_start();
 // Verifica si el usuario ha iniciado sesión; si no, redirige a login.php.
+include "functions.php";
+
+
+$libros = getBooks();
 
 if(!isset($_SESSION['credenciales'])){
     // Si no hay sesión activa, redirige a login.php
@@ -9,29 +13,6 @@ if(!isset($_SESSION['credenciales'])){
 }
 $usuario = $_SESSION['credenciales'];
 
-if(!isset($_SESSION['libros'])){
-    $_SESSION['libros'] = [
-    [
-        "id" => 1,
-        "titulo" => "El Quijote",
-        "autor" => "Miguel de Cervantes",
-        "descripcion" => "Una novela sobre aventuras de un caballero.",
-        "imagen" => "https://m.media-amazon.com/images/I/91CIwR3QU1L._UF1000,1000_QL80_.jpg"
-    ],
-    [
-        "id" => 2,
-        "titulo" => "1984",
-        "autor" => "George Orwell",
-        "descripcion" => "Novela distópica sobre vigilancia y control.",
-        "imagen" => "https://www.libreriaalberti.com/media/img/portadas/_visd_0000JPG02I0T.jpg"
-    ]
-];
-
-    $libros = $_SESSION['libros'];
-}else{
-    $libros = $_SESSION['libros'];
-
-}
 
 ?>
 

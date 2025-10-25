@@ -2,6 +2,17 @@
 include "functions.php";
 session_start();
 
+if (!isset($_SESSION['credenciales'])) {
+    // Si no hay sesión activa, redirige a login.php
+    header("Location: login.php");
+    exit(); 
+} elseif ($_SESSION['credenciales']['username'] !== 'admin') {
+    // Si el usuario NO es admin, lo redirigimos al home
+    header("Location: home.php");
+    exit(); 
+}
+
+
 // Detectamos el modo y el ID
 $modo = $_GET['modo'] ?? 'añadir';
 $id = $_GET['id'] ?? null;
