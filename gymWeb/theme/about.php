@@ -11,7 +11,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Agen | Bootstrap Agency Template</title>
+  <title>BlackPeak Fitness — Sobre nosotros</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,7 +43,7 @@
 
 <header class="navigation fixed-top bg-dark">
   <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="./index.php"><img src="./images/logo.png" alt="Egen"></a>
+    <a class="navbar-brand" href="./index.php"><img src="./images/logo.png" alt="BlackPeak Fitness"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
       aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -52,29 +52,29 @@
     <div class="collapse navbar-collapse text-center" id="navigation">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="./index.php">Home</a>
+          <a class="nav-link" href="./index.php">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./about.php">About</a>
+          <a class="nav-link" href="./about.php">Nosotros</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./services.php">Services</a>
+          <a class="nav-link" href="./services.php">Servicios</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./blog.php">Blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./works.php">Portfolio</a>
+          <a class="nav-link" href="./works.php">Entrenamientos</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="./blog-single.php">Blog Details</a>
-            <a class="dropdown-item" href="./faqs.php">FAQ's</a>
+            <a class="dropdown-item" href="./blog-single.php">Artículo</a>
+            <a class="dropdown-item" href="./faqs.php">Preguntas</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./contact.php">Contact</a>
+          <a class="nav-link" href="./contact.php">Contacto</a>
         </li>
       </ul>
     </div>
@@ -86,7 +86,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="display-1 text-white font-weight-bold font-primary">About Agen</h1>
+        <h1 class="display-1 text-white font-weight-bold font-primary">Acerca de BlackPeak Fitness</h1>
       </div>
     </div>
   </div>
@@ -102,7 +102,7 @@
       </div>
       <div class="col-md-6 col-lg-5">
         <div class="progress-block">
-          <h6 class="text-uppercase">HTML5 Expertise</h6>
+          <h6 class="text-uppercase">Entrenadores Certificados</h6>
           <div class="progress">
             <div class="progress-bar" data-percent="85">
               <span class="skill-number text-dark font-weight-bold"><span class="count">85</span>%</span>
@@ -110,7 +110,7 @@
           </div>
         </div>
         <div class="progress-block">
-          <h6 class="text-uppercase">jQuery Expertise</h6>
+          <h6 class="text-uppercase">Experiencia en Entrenamiento</h6>
           <div class="progress">
             <div class="progress-bar" data-percent="95">
               <span class="skill-number text-dark font-weight-bold"><span class="count">95</span>%</span>
@@ -118,7 +118,7 @@
           </div>
         </div>
         <div class="progress-block">
-          <h6 class="text-uppercase">PHP Expertise</h6>
+          <h6 class="text-uppercase">Nutrición y Recuperación</h6>
           <div class="progress">
             <div class="progress-bar" data-percent="79">
               <span class="skill-number text-dark font-weight-bold"><span class="count">79</span>%</span>
@@ -126,7 +126,7 @@
           </div>
         </div>
         <div class="progress-block">
-          <h6 class="text-uppercase">User Interface Expertise</h6>
+          <h6 class="text-uppercase">Preparación Física</h6>
           <div class="progress">
             <div class="progress-bar" data-percent="90">
               <span class="skill-number text-dark font-weight-bold"><span class="count">90</span>%</span>
@@ -164,8 +164,8 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto text-center">
-        <h2>Our Team</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+        <h2>Nuestro Equipo</h2>
+        <p>Profesionales en entrenamiento, nutrición y recuperación dedicados a tus resultados.</p>
         <div class="section-border"></div>
       </div>
     </div>
@@ -175,7 +175,7 @@
           <img src="./images/team/member-1.jpg" alt="team-member" class="card-img-top">
           <div class="card-body text-center position-relative zindex-1">
             <h4 class="text-dark">Sara Adams</h4>
-            <i>Designer</i>
+            <i>Entrenadora</i>
           </div>
         </div>
       </div>
@@ -184,7 +184,7 @@
           <img src="./images/team/member-2.jpg" alt="team-member" class="card-img-top">
           <div class="card-body text-center position-relative zindex-1">
             <h4 class="text-dark">Tom Bills</h4>
-            <i>Developer</i>
+            <i>Entrenador</i>
           </div>
         </div>
       </div>
@@ -193,7 +193,7 @@
           <img src="./images/team/member-3.jpg" alt="team-member" class="card-img-top">
           <div class="card-body text-center position-relative zindex-1">
             <h4 class="text-dark">Anna Walle</h4>
-            <i>Manager</i>
+            <i>Nutricionista</i>
           </div>
         </div>
       </div>
@@ -202,7 +202,7 @@
           <img src="./images/team/member-4.jpg" alt="team-member" class="card-img-top">
           <div class="card-body text-center">
             <h4>Devid Json</h4>
-            <i>CEO</i>
+            <i>Director</i>
           </div>
         </div>
       </div>
@@ -216,7 +216,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h2 class="text-white mb-5">Our Client Testimonails</h2>
+        <h2 class="text-white mb-5">Testimonios</h2>
       </div>
     </div>
     <div class="row bg-contain" data-background="./images/banner/brush.png">
@@ -337,7 +337,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6 text-center text-md-left">
-          <p class="text-light mb-0">Copyright &copy; 2019 a theme by <a class="text-gradient-primary" href="https://themefisher.com">themefisher.com</a>
+          <p class="text-light mb-0">Copyright &copy; 2025 BlackPeak Fitness — Gimnasio moderno
           </p>
         </div>
         <div class="col-md-6">

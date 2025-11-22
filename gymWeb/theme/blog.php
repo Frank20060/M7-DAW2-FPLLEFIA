@@ -11,7 +11,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Agen | Bootstrap Agency Template</title>
+  <title>BlackPeak Fitness — Blog</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,52 +41,13 @@
 <body>
   
 
-<header class="navigation fixed-top bg-dark">
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="./index.php"><img src="images/logo.png" alt="Egen"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse text-center" id="navigation">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="./index.php">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./about.php">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./services.php">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./blog.php">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./works.php">Portfolio</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="./blog-single.php">Blog Details</a>
-            <a class="dropdown-item" href="./faqs.php">FAQ's</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./contact.php">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</header>
-
+<?php include './includes/nav.php';?>
 <!-- page-title -->
 <section class="page-title bg-cover" data-background="images/backgrounds/page-title.jpg">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="display-1 text-white font-weight-bold font-primary">Our Blog</h1>
+        <h1 class="display-1 text-white font-weight-bold font-primary">Blog y Noticias</h1>
       </div>
     </div>
   </div>
@@ -245,7 +206,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6 text-center text-md-left">
-          <p class="text-light mb-0">Copyright &copy; 2019 a theme by <a class="text-gradient-primary" href="https://themefisher.com">themefisher.com</a>
+          <p class="text-light mb-0">Copyright &copy; 2025 BlackPeak Fitness — Gimnasio moderno
           </p>
         </div>
         <div class="col-md-6">

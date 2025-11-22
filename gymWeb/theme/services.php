@@ -11,7 +11,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Agen | Bootstrap Agency Template</title>
+  <title>BlackPeak Fitness — Servicios</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,52 +41,13 @@
 <body>
   
 
-<header class="navigation fixed-top bg-dark">
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="./index.php"><img src="images/logo.png" alt="Egen"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse text-center" id="navigation">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="./index.php">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./about.php">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./services.php">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./blog.php">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./works.php">Portfolio</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="./blog-single.php">Blog Details</a>
-            <a class="dropdown-item" href="./faqs.php">FAQ's</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./contact.php">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</header>
-
+<?php include './includes/nav.php';?>
 <!-- page-title -->
 <section class="page-title bg-cover" data-background="images/backgrounds/page-title.jpg">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="display-1 text-white font-weight-bold font-primary">Our Services</h1>
+        <h1 class="display-1 text-white font-weight-bold font-primary">Nuestros Servicios</h1>
       </div>
     </div>
   </div>
@@ -104,8 +65,8 @@
               <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-palette mb-5 d-inline-block text-white"></i>
               <i class="icon-lg icon-watermark text-white ti-palette"></i>
             </div>
-            <h4 class="mb-4">Design</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+            <h4 class="mb-4">Entrenamiento Personal</h4>
+            <p>Sesiones individuales con plan adaptado y seguimiento profesional.</p>
           </div>
         </div>
       </div>
@@ -116,8 +77,8 @@
               <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-dashboard mb-5 d-inline-block text-white"></i>
               <i class="icon-lg icon-watermark text-white ti-dashboard"></i>
             </div>
-            <h4 class="mb-4">Development</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+            <h4 class="mb-4">Clases Grupales</h4>
+            <p>Clases de HIIT, fuerza y acondicionamiento en grupo para motivación y resultados.</p>
           </div>
         </div>
       </div>
@@ -128,8 +89,8 @@
               <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-announcement mb-5 d-inline-block text-white"></i>
               <i class="icon-lg icon-watermark text-white ti-announcement"></i>
             </div>
-            <h4 class="mb-4">Marketing</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+            <h4 class="mb-4">Nutrición</h4>
+            <p>Asesoría nutricional personalizada para maximizar tu rendimiento.</p>
           </div>
         </div>
       </div>
@@ -189,15 +150,15 @@
           <div class="col-lg-7 offset-lg-1">
             <div class="row">
               <div class="col-12">
-                <h2 class="text-white">We know What Bait to Use</h2>
+                <h2 class="text-white">Equipamiento Profesional</h2>
                 <div class="section-border ml-0"></div>
               </div>
               <div class="col-md-6 mb-4">
                 <div class="media">
                   <i class="icon text-gradient-primary ti-vector mr-3"></i>
                   <div class="media-body">
-                    <h4 class="text-white">User Experience</h4>
-                    <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+                    <h4 class="text-white">Entrenadores Expertos</h4>
+                    <p class="text-light">Equipo humano con experiencia en atletismo, fuerza y rehabilitación.</p>
                   </div>
                 </div>
               </div>
@@ -242,9 +203,9 @@
   <div class="container section-sm overlay-secondary-half bg-cover" data-background="images/backgrounds/cta-bg.jpg">
   <div class="row">
     <div class="col-lg-8 offset-lg-1">
-      <h2 class="text-gradient-primary">Let's Start With Us!</h2>
-      <p class="h4 font-weight-bold text-white mb-4">Lorem ipsum dolor sit amet, magna habemus ius ad</p>
-      <a href="./contact.php" class="btn btn-lg btn-primary">Let’s talk</a>
+                <h2 class="text-gradient-primary">Empieza hoy con BlackPeak</h2>
+      <p class="h4 font-weight-bold text-white mb-4">Consulta nuestros planes y prueba una clase gratis.</p>
+      <a href="./contact.php" class="btn btn-lg btn-primary">Contáctanos</a>
     </div>
   </div>
 </div>
@@ -295,7 +256,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6 text-center text-md-left">
-          <p class="text-light mb-0">Copyright &copy; 2019 a theme by <a class="text-gradient-primary" href="https://themefisher.com">themefisher.com</a>
+          <p class="text-light mb-0">Copyright &copy; 2025 BlackPeak Fitness — Gimnasio moderno
           </p>
         </div>
         <div class="col-md-6">
