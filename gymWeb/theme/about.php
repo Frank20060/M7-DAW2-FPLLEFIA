@@ -43,7 +43,7 @@
 
 <header class="navigation fixed-top">
   <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="./index.html"><img src="images/logo.png" alt="Egen"></a>
+    <a class="navbar-brand" href="./index.php"><img src="./images/logo.png" alt="Egen"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
       aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -52,34 +52,29 @@
     <div class="collapse navbar-collapse text-center" id="navigation">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="./index.html">Home</a>
+          <a class="nav-link" href="./index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./about.html">About</a>
+          <a class="nav-link" href="./about.php">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./services.html">Services</a>
+          <a class="nav-link" href="./services.php">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./blog.html">Blog</a>
+          <a class="nav-link" href="./blog.php">Blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./portfolio.html">Portfolio</a>
+          <a class="nav-link" href="./works.php">Portfolio</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="./team.html">Team</a>
-            <a class="dropdown-item" href="./team-single.html">Team Details</a>
-            <a class="dropdown-item" href="./career.html">Career</a>
-            <a class="dropdown-item" href="./career-single.html">Career Details</a>
-            <a class="dropdown-item" href="./blog-single.html">Blog Details</a>
-            <a class="dropdown-item" href="./pricing.html">Pricing</a></a>
-            <a class="dropdown-item" href="./faqs.html">FAQ's</a>
+            <a class="dropdown-item" href="./blog-single.php">Blog Details</a>
+            <a class="dropdown-item" href="./faqs.php">FAQ's</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./contact.html">Contact</a>
+          <a class="nav-link" href="./contact.php">Contact</a>
         </li>
       </ul>
     </div>
@@ -87,7 +82,7 @@
 </header>
 
 <!-- page-title -->
-<section class="page-title bg-cover" data-background="images/backgrounds/page-title.jpg">
+<section class="page-title bg-cover" data-background="./images/backgrounds/page-title.jpg">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
@@ -103,7 +98,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 mb-4 mb-lg-0">
-        <img src="images/about/about-us.png" alt="about" class="img-fluid">
+        <img src="./images/about/about-us.png" alt="about" class="img-fluid">
       </div>
       <div class="col-md-6 col-lg-5">
         <div class="progress-block">
@@ -150,7 +145,7 @@
     <div class="row">
       <div class="col-12">
         <div class="overlay-secondary video-player">
-          <img src="images/about/video-thumb.jpg" alt="video-thumb" class="img-fluid w-100">
+          <img src="./images/about/video-thumb.jpg" alt="video-thumb" class="img-fluid w-100">
           <a class="play-icon">
             <i class="text-center icon-sm icon-box-sm rounded-circle text-white bg-gradient-primary d-block ti-control-play content-center"
               data-video="https://www.youtube.com/embed/jrkvirglgaQ?autoplay=1">
@@ -177,34 +172,34 @@
     <div class="row no-gutters">
       <div class="col-lg-3 col-sm-6">
         <div class="card hover-shadow">
-          <img src="images/team/member-1.jpg" alt="team-member" class="card-img-top">
+          <img src="./images/team/member-1.jpg" alt="team-member" class="card-img-top">
           <div class="card-body text-center position-relative zindex-1">
-            <h4><a class="text-dark" href="./team-single.html">Sara Adams</a></h4>
+            <h4 class="text-dark">Sara Adams</h4>
             <i>Designer</i>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-6">
         <div class="card hover-shadow">
-          <img src="images/team/member-2.jpg" alt="team-member" class="card-img-top">
+          <img src="./images/team/member-2.jpg" alt="team-member" class="card-img-top">
           <div class="card-body text-center position-relative zindex-1">
-            <h4><a class="text-dark" href="./team-single.html">Tom Bills</a></h4>
+            <h4 class="text-dark">Tom Bills</h4>
             <i>Developer</i>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-6">
         <div class="card hover-shadow">
-          <img src="images/team/member-3.jpg" alt="team-member" class="card-img-top">
+          <img src="./images/team/member-3.jpg" alt="team-member" class="card-img-top">
           <div class="card-body text-center position-relative zindex-1">
-            <h4><a class="text-dark" href="./team-single.html">Anna Walle</a></h4>
+            <h4 class="text-dark">Anna Walle</h4>
             <i>Manager</i>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-6">
         <div class="card hover-shadow">
-          <img src="images/team/member-4.jpg" alt="team-member" class="card-img-top">
+          <img src="./images/team/member-4.jpg" alt="team-member" class="card-img-top">
           <div class="card-body text-center">
             <h4>Devid Json</h4>
             <i>CEO</i>
@@ -224,13 +219,13 @@
         <h2 class="text-white mb-5">Our Client Testimonails</h2>
       </div>
     </div>
-    <div class="row bg-contain" data-background="images/banner/brush.png">
+    <div class="row bg-contain" data-background="./images/banner/brush.png">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div id="slider" class="ui-card-slider bg-contain">
           <div class="slide">
             <div class="card text-center">
               <div class="card-body px-5 py-4">
-                <img src="images/testimonial/user-1.jpg" alt="user-1" class="img-fluid rounded-circle mb-4">
+                <img src="./images/testimonial/user-1.jpg" alt="user-1" class="img-fluid rounded-circle mb-4">
                 <h4 class="text-secondary">Mellissa Christine</h4>
                 <p>“Great work I got a lot more than what I ordered, they are very legítimas and catchy. I went for one
                   of them for my brand but is always better to have more options.”</p>
@@ -240,7 +235,7 @@
           <div class="slide">
             <div class="card text-center">
               <div class="card-body px-5 py-4">
-                <img src="images/testimonial/user-1.jpg" alt="user-1" class="img-fluid rounded-circle mb-4">
+                <img src="./images/testimonial/user-1.jpg" alt="user-1" class="img-fluid rounded-circle mb-4">
                 <h4 class="text-secondary">Mellissa Christine</h4>
                 <p>“Great work I got a lot more than what I ordered, they are very legítimas and catchy. I went for one
                   of them for my brand but is always better to have more options.”</p>
@@ -250,7 +245,7 @@
           <div class="slide">
             <div class="card text-center">
               <div class="card-body px-5 py-4">
-                <img src="images/testimonial/user-1.jpg" alt="user-1" class="img-fluid rounded-circle mb-4">
+                <img src="./images/testimonial/user-1.jpg" alt="user-1" class="img-fluid rounded-circle mb-4">
                 <h4 class="text-secondary">Mellissa Christine</h4>
                 <p>“Great work I got a lot more than what I ordered, they are very legítimas and catchy. I went for one
                   of them for my brand but is always better to have more options.”</p>
@@ -260,7 +255,7 @@
           <div class="slide">
             <div class="card text-center">
               <div class="card-body px-5 py-4">
-                <img src="images/testimonial/user-1.jpg" alt="user-1" class="img-fluid rounded-circle mb-4">
+                <img src="./images/testimonial/user-1.jpg" alt="user-1" class="img-fluid rounded-circle mb-4">
                 <h4 class="text-secondary">Mellissa Christine</h4>
                 <p>“Great work I got a lot more than what I ordered, they are very legítimas and catchy. I went for one
                   of them for my brand but is always better to have more options.”</p>
@@ -270,7 +265,7 @@
           <div class="slide">
             <div class="card text-center">
               <div class="card-body px-5 py-4">
-                <img src="images/testimonial/user-1.jpg" alt="user-1" class="img-fluid rounded-circle mb-4">
+                <img src="./images/testimonial/user-1.jpg" alt="user-1" class="img-fluid rounded-circle mb-4">
                 <h4 class="text-secondary">Mellissa Christine</h4>
                 <p>“Great work I got a lot more than what I ordered, they are very legítimas and catchy. I went for one
                   of them for my brand but is always better to have more options.”</p>
@@ -286,12 +281,12 @@
 
 <!-- call to action -->
 <section class="section">
-  <div class="container section-sm overlay-secondary-half bg-cover" data-background="images/backgrounds/cta-bg.jpg">
+  <div class="container section-sm overlay-secondary-half bg-cover" data-background="./images/backgrounds/cta-bg.jpg">
   <div class="row">
     <div class="col-lg-8 offset-lg-1">
       <h2 class="text-gradient-primary">Let's Start With Us!</h2>
       <p class="h4 font-weight-bold text-white mb-4">Lorem ipsum dolor sit amet, magna habemus ius ad</p>
-      <a href="./contact.html" class="btn btn-lg btn-primary">Let’s talk</a>
+      <a href="./contact.php" class="btn btn-lg btn-primary">Let’s talk</a>
     </div>
   </div>
 </div>
@@ -300,7 +295,7 @@
 
 <!-- footer -->
 <footer class="bg-secondary position-relative">
-  <img src="images/backgrounds/map.png" class="img-fluid overlay-image" alt="">
+  <img src="./images/backgrounds/map.png" class="img-fluid overlay-image" alt="">
   <div class="section">
     <div class="container">
       <div class="row align-items-center">
@@ -342,7 +337,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6 text-center text-md-left">
-          <p class="text-light mb-0">Copyright &copy; 2019 a theme by <a class="text-gradient-primary" href="./https://themefisher.com">themefisher.com</a>
+          <p class="text-light mb-0">Copyright &copy; 2019 a theme by <a class="text-gradient-primary" href="https://themefisher.com">themefisher.com</a>
           </p>
         </div>
         <div class="col-md-6">

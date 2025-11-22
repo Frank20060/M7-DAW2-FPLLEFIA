@@ -43,7 +43,7 @@
 
 <header class="navigation fixed-top">
   <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="./index.html"><img src="images/logo.png" alt="Egen"></a>
+    <a class="navbar-brand" href="./index.php"><img src="images/logo.png" alt="Egen"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
       aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -52,34 +52,29 @@
     <div class="collapse navbar-collapse text-center" id="navigation">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="./index.html">Home</a>
+          <a class="nav-link" href="./index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./about.html">About</a>
+          <a class="nav-link" href="./about.php">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./services.html">Services</a>
+          <a class="nav-link" href="./services.php">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./blog.html">Blog</a>
+          <a class="nav-link" href="./blog.php">Blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./portfolio.html">Portfolio</a>
+          <a class="nav-link" href="./works.php">Portfolio</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="./team.html">Team</a>
-            <a class="dropdown-item" href="./team-single.html">Team Details</a>
-            <a class="dropdown-item" href="./career.html">Career</a>
-            <a class="dropdown-item" href="./career-single.html">Career Details</a>
-            <a class="dropdown-item" href="./blog-single.html">Blog Details</a>
-            <a class="dropdown-item" href="./pricing.html">Pricing</a></a>
-            <a class="dropdown-item" href="./faqs.html">FAQ's</a>
+            <a class="dropdown-item" href="./blog-single.php">Blog Details</a>
+            <a class="dropdown-item" href="./faqs.php">FAQ's</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./contact.html">Contact</a>
+          <a class="nav-link" href="./contact.php">Contact</a>
         </li>
       </ul>
     </div>
@@ -107,9 +102,9 @@
           <img src="images/blog/post-1.jpg" alt="post-thumb" class="card-img-top mb-2">
           <div class="card-body p-0">
             <time>January 15, 2018</time>
-            <a href="./blog-single.html" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
+            <a href="./blog-single.php" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
               Book Covers Reflect the Design</a>
-            <a href="./blog-single.html" class="btn btn-transparent">Read more</a>
+            <a href="./blog-single.php" class="btn btn-transparent">Read more</a>
           </div>
         </article>
       </div>
@@ -118,9 +113,9 @@
           <img src="images/blog/post-2.jpg" alt="post-thumb" class="card-img-top mb-2">
           <div class="card-body p-0">
             <time>January 15, 2018</time>
-            <a href="./blog-single.html" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
+            <a href="./blog-single.php" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
               Book Covers Reflect the Design</a>
-            <a href="./blog-single.html" class="btn btn-transparent">Read more</a>
+            <a href="./blog-single.php" class="btn btn-transparent">Read more</a>
           </div>
         </article>
       </div>
@@ -129,9 +124,9 @@
           <img src="images/blog/post-3.jpg" alt="post-thumb" class="card-img-top mb-2">
           <div class="card-body p-0">
             <time>January 15, 2018</time>
-            <a href="./blog-single.html" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
+            <a href="./blog-single.php" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
               Book Covers Reflect the Design</a>
-            <a href="./blog-single.html" class="btn btn-transparent">Read more</a>
+            <a href="./blog-single.php" class="btn btn-transparent">Read more</a>
           </div>
         </article>
       </div>
@@ -140,9 +135,9 @@
           <img src="images/blog/post-1.jpg" alt="post-thumb" class="card-img-top mb-2">
           <div class="card-body p-0">
             <time>January 15, 2018</time>
-            <a href="./blog-single.html" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
+            <a href="./blog-single.php" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
               Book Covers Reflect the Design</a>
-            <a href="./blog-single.html" class="btn btn-transparent">Read more</a>
+            <a href="./blog-single.php" class="btn btn-transparent">Read more</a>
           </div>
         </article>
       </div>
@@ -151,9 +146,9 @@
           <img src="images/blog/post-2.jpg" alt="post-thumb" class="card-img-top mb-2">
           <div class="card-body p-0">
             <time>January 15, 2018</time>
-            <a href="./blog-single.html" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
+            <a href="./blog-single.php" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
               Book Covers Reflect the Design</a>
-            <a href="./blog-single.html" class="btn btn-transparent">Read more</a>
+            <a href="./blog-single.php" class="btn btn-transparent">Read more</a>
           </div>
         </article>
       </div>
@@ -162,9 +157,9 @@
           <img src="images/blog/post-3.jpg" alt="post-thumb" class="card-img-top mb-2">
           <div class="card-body p-0">
             <time>January 15, 2018</time>
-            <a href="./blog-single.html" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
+            <a href="./blog-single.php" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
               Book Covers Reflect the Design</a>
-            <a href="./blog-single.html" class="btn btn-transparent">Read more</a>
+            <a href="./blog-single.php" class="btn btn-transparent">Read more</a>
           </div>
         </article>
       </div>
@@ -173,9 +168,9 @@
           <img src="images/blog/post-1.jpg" alt="post-thumb" class="card-img-top mb-2">
           <div class="card-body p-0">
             <time>January 15, 2018</time>
-            <a href="./blog-single.html" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
+            <a href="./blog-single.php" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
               Book Covers Reflect the Design</a>
-            <a href="./blog-single.html" class="btn btn-transparent">Read more</a>
+            <a href="./blog-single.php" class="btn btn-transparent">Read more</a>
           </div>
         </article>
       </div>
@@ -184,9 +179,9 @@
           <img src="images/blog/post-2.jpg" alt="post-thumb" class="card-img-top mb-2">
           <div class="card-body p-0">
             <time>January 15, 2018</time>
-            <a href="./blog-single.html" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
+            <a href="./blog-single.php" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
               Book Covers Reflect the Design</a>
-            <a href="./blog-single.html" class="btn btn-transparent">Read more</a>
+            <a href="./blog-single.php" class="btn btn-transparent">Read more</a>
           </div>
         </article>
       </div>
@@ -195,9 +190,9 @@
           <img src="images/blog/post-3.jpg" alt="post-thumb" class="card-img-top mb-2">
           <div class="card-body p-0">
             <time>January 15, 2018</time>
-            <a href="./blog-single.html" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
+            <a href="./blog-single.php" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
               Book Covers Reflect the Design</a>
-            <a href="./blog-single.html" class="btn btn-transparent">Read more</a>
+            <a href="./blog-single.php" class="btn btn-transparent">Read more</a>
           </div>
         </article>
       </div>
@@ -250,7 +245,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6 text-center text-md-left">
-          <p class="text-light mb-0">Copyright &copy; 2019 a theme by <a class="text-gradient-primary" href="./https://themefisher.com">themefisher.com</a>
+          <p class="text-light mb-0">Copyright &copy; 2019 a theme by <a class="text-gradient-primary" href="https://themefisher.com">themefisher.com</a>
           </p>
         </div>
         <div class="col-md-6">
