@@ -12,7 +12,7 @@
         die("Error de conexion" . $mysqli->connect_error);
 
     }else{
-        echo "Conexión exitosa con la base de datos.";
+       ///No que luego fallan cosas// echo "Conexión exitosa con la base de datos.";
     }
 
 
