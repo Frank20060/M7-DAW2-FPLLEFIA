@@ -41,7 +41,7 @@
 <body>
   
 
-<header class="navigation fixed-top">
+<header class="navigation fixed-top bg-dark">
   <nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="./index.php"><img src="images/logo.png" alt="Egen"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
