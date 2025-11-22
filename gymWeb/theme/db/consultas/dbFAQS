@@ -1,9 +1,9 @@
 <?php
 
-
 include_once __DIR__ . "/../dbconfig/config.php";
 
 function getTestimonios() {
+    
     global $mysqli;
     $stmt = $mysqli->prepare("SELECT * FROM TESTIMONIOS");
     if (!$stmt) {
@@ -14,3 +14,4 @@ function getTestimonios() {
     $stmt->close();
     return $res;
 }
+    
