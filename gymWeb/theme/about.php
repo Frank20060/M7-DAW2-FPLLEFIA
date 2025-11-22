@@ -19,22 +19,22 @@
   
   <!-- ** Plugins Needed for the Project ** -->
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="./plugins/bootstrap/bootstrap.min.css">
   <!-- slick slider -->
-  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="./plugins/slick/slick.css">
   <!-- themefy-icon -->
-  <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="./plugins/themify-icons/themify-icons.css">
   <!-- venobox css -->
-  <link rel="stylesheet" href="plugins/venobox/venobox.css">
+  <link rel="stylesheet" href="./plugins/venobox/venobox.css">
   <!-- card slider -->
-  <link rel="stylesheet" href="plugins/card-slider/css/style.css">
+  <link rel="stylesheet" href="./plugins/card-slider/css/style.css">
 
   <!-- Main Stylesheet -->
-  <link href="css/style.css" rel="stylesheet">
+  <link href="./css/style.css" rel="stylesheet">
   
   <!--Favicon-->
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
 
 </head>
 
@@ -43,7 +43,7 @@
 
 <header class="navigation fixed-top">
   <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Egen"></a>
+    <a class="navbar-brand" href="./index.html"><img src="images/logo.png" alt="Egen"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
       aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -52,34 +52,34 @@
     <div class="collapse navbar-collapse text-center" id="navigation">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="./index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="./about.html">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="services.html">Services</a>
+          <a class="nav-link" href="./services.html">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="blog.html">Blog</a>
+          <a class="nav-link" href="./blog.html">Blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="portfolio.html">Portfolio</a>
+          <a class="nav-link" href="./portfolio.html">Portfolio</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="team.html">Team</a>
-            <a class="dropdown-item" href="team-single.html">Team Details</a>
-            <a class="dropdown-item" href="career.html">Career</a>
-            <a class="dropdown-item" href="career-single.html">Career Details</a>
-            <a class="dropdown-item" href="blog-single.html">Blog Details</a>
-            <a class="dropdown-item" href="pricing.html">Pricing</a></a>
-            <a class="dropdown-item" href="faqs.html">FAQ's</a>
+            <a class="dropdown-item" href="./team.html">Team</a>
+            <a class="dropdown-item" href="./team-single.html">Team Details</a>
+            <a class="dropdown-item" href="./career.html">Career</a>
+            <a class="dropdown-item" href="./career-single.html">Career Details</a>
+            <a class="dropdown-item" href="./blog-single.html">Blog Details</a>
+            <a class="dropdown-item" href="./pricing.html">Pricing</a></a>
+            <a class="dropdown-item" href="./faqs.html">FAQ's</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
+          <a class="nav-link" href="./contact.html">Contact</a>
         </li>
       </ul>
     </div>
@@ -179,7 +179,7 @@
         <div class="card hover-shadow">
           <img src="images/team/member-1.jpg" alt="team-member" class="card-img-top">
           <div class="card-body text-center position-relative zindex-1">
-            <h4><a class="text-dark" href="team-single.html">Sara Adams</a></h4>
+            <h4><a class="text-dark" href="./team-single.html">Sara Adams</a></h4>
             <i>Designer</i>
           </div>
         </div>
@@ -188,7 +188,7 @@
         <div class="card hover-shadow">
           <img src="images/team/member-2.jpg" alt="team-member" class="card-img-top">
           <div class="card-body text-center position-relative zindex-1">
-            <h4><a class="text-dark" href="team-single.html">Tom Bills</a></h4>
+            <h4><a class="text-dark" href="./team-single.html">Tom Bills</a></h4>
             <i>Developer</i>
           </div>
         </div>
@@ -197,7 +197,7 @@
         <div class="card hover-shadow">
           <img src="images/team/member-3.jpg" alt="team-member" class="card-img-top">
           <div class="card-body text-center position-relative zindex-1">
-            <h4><a class="text-dark" href="team-single.html">Anna Walle</a></h4>
+            <h4><a class="text-dark" href="./team-single.html">Anna Walle</a></h4>
             <i>Manager</i>
           </div>
         </div>
@@ -291,7 +291,7 @@
     <div class="col-lg-8 offset-lg-1">
       <h2 class="text-gradient-primary">Let's Start With Us!</h2>
       <p class="h4 font-weight-bold text-white mb-4">Lorem ipsum dolor sit amet, magna habemus ius ad</p>
-      <a href="contact.html" class="btn btn-lg btn-primary">Let’s talk</a>
+      <a href="./contact.html" class="btn btn-lg btn-primary">Let’s talk</a>
     </div>
   </div>
 </div>
@@ -342,7 +342,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6 text-center text-md-left">
-          <p class="text-light mb-0">Copyright &copy; 2019 a theme by <a class="text-gradient-primary" href="https://themefisher.com">themefisher.com</a>
+          <p class="text-light mb-0">Copyright &copy; 2019 a theme by <a class="text-gradient-primary" href="./https://themefisher.com">themefisher.com</a>
           </p>
         </div>
         <div class="col-md-6">
