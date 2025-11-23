@@ -1,0 +1,201 @@
+Registro de acciones y consultas SQL 
+(IA, le he pasado las consultas que he usado y le he dicho que documente, es una cosa que no me gusta nada y no puedo con ella. Yo te hago lo que quieras programando menos documentar lo que voy haciendo
+=================================
+
+Consultas SQL - Historia 1 (Lectura)
+-----------------------------------
+
+1) Leer todas las noticias ordenadas por fecha (más recientes primero)
+
+```sql
+SELECT id, titulo, resumen, contenido, fecha_publicacion, autor_id
+FROM noticias
+ORDER BY fecha_publicacion DESC;
+```
+
+2) Leer sólo las 3 últimas noticias (por fecha)
+
+```sql
+SELECT id, titulo, resumen, fecha_publicacion
+FROM noticias
+ORDER BY fecha_publicacion DESC
+LIMIT 3;
+```
+
+3) Leer todos los campos de una noticia por `id`
+
+```sql
+SELECT *
+FROM noticias
+WHERE id = ?; -- usar prepared statement y bind del id
+```
+
+4) Leer los campos de los testimonios (foto, nombre, apellido, testimonio)
+
+```sql
+SELECT id, foto, nombre, apellidos, testimonio
+FROM testimonios
+ORDER BY id DESC;
+```
+
+5) Leer todos los proyectos (portfolio)
+
+```sql
+SELECT id, titulo, descripcion, imagen, enlace, fecha
+FROM proyectos
+ORDER BY fecha DESC;
+```
+
+6) Leer comentarios ordenados por fecha asociados a una noticia, incluyendo información del usuario que hizo el comentario (nombre, apellidos, foto, id_user)
+
+```sql
+SELECT c.id, c.contenido, c.fecha, c.parent_id,
+       u.id AS usuario_id, u.nombre, u.apellidos, u.foto AS usuario_foto
+FROM comentarios c
+JOIN usuarios u ON c.usuario_id = u.id
+WHERE c.noticia_id = ?
+ORDER BY c.fecha ASC; -- o DESC según preferencia
+```
+
+7) Leer comentarios de respuesta a otro comentario (vinculado por `parent_id`)
+
+```sql
+SELECT id, contenido, fecha, usuario_id, parent_id
+FROM comentarios
+WHERE parent_id = ?
+ORDER BY fecha ASC;
+```
+
+8) Leer preguntas frecuentes (FAQ's)
+
+```sql
+SELECT id, pregunta, respuesta, orden
+FROM faqs
+ORDER BY orden ASC;
+```
+
+Consultas SQL - Añadir / Editar / Eliminar (roles user/admin)
+-------------------------------------------------------------
+
+Operaciones permitidas para `user` (propias)
+
+- Añadir comentario / responder comentario
+
+```sql
+INSERT INTO comentarios (noticia_id, usuario_id, contenido, fecha, parent_id)
+VALUES (?, ?, ?, NOW(), ?);
+```
+
+- Editar tu propio comentario (comprobar `usuario_id` en la cláusula WHERE)
+
+```sql
+UPDATE comentarios
+SET contenido = ?, fecha = NOW()
+WHERE id = ? AND usuario_id = ?;
+```
+
+- Eliminar tu propio comentario
+
+```sql
+DELETE FROM comentarios
+WHERE id = ? AND usuario_id = ?;
+```
+
+Operaciones permitidas para `admin` (CRUD completo)
+
+- Usuarios
+
+```sql
+-- Crear usuario
+INSERT INTO usuarios (nombre, email, password, rol, fecha_registro)
+VALUES (?, ?, ?, ?, NOW());
+
+-- Leer todos los usuarios
+SELECT id, nombre, email, rol, fecha_registro FROM usuarios;
+
+-- Editar usuario
+UPDATE usuarios SET nombre = ?, email = ?, rol = ? WHERE id = ?;
+
+-- Eliminar usuario
+DELETE FROM usuarios WHERE id = ?;
+```
+
+- Testimonios
+
+```sql
+INSERT INTO testimonios (nombre, apellidos, foto, testimonio, fecha)
+VALUES (?, ?, ?, ?, NOW());
+
+SELECT id, nombre, apellidos, foto, testimonio FROM testimonios;
+
+UPDATE testimonios SET nombre = ?, apellidos = ?, foto = ?, testimonio = ? WHERE id = ?;
+
+DELETE FROM testimonios WHERE id = ?;
+```
+
+- Proyectos (portfolio)
+
+```sql
+INSERT INTO proyectos (titulo, descripcion, imagen, enlace, fecha)
+VALUES (?, ?, ?, ?, ?);
+
+SELECT id, titulo, descripcion, imagen, enlace, fecha FROM proyectos;
+
+UPDATE proyectos SET titulo = ?, descripcion = ?, imagen = ?, enlace = ?, fecha = ? WHERE id = ?;
+
+DELETE FROM proyectos WHERE id = ?;
+```
+
+- Noticias
+
+```sql
+INSERT INTO noticias (titulo, resumen, contenido, autor_id, fecha_publicacion)
+VALUES (?, ?, ?, ?, NOW());
+
+SELECT id, titulo, resumen, contenido, autor_id, fecha_publicacion FROM noticias;
+
+UPDATE noticias SET titulo = ?, resumen = ?, contenido = ?, fecha_publicacion = ? WHERE id = ?;
+
+DELETE FROM noticias WHERE id = ?;
+```
+
+- Comentarios (admin)
+
+```sql
+SELECT id, noticia_id, usuario_id, contenido, fecha, parent_id FROM comentarios;
+
+UPDATE comentarios SET contenido = ? WHERE id = ?;
+
+DELETE FROM comentarios WHERE id = ?;
+```
+
+Consultas auxiliares útiles
+---------------------------
+
+- Comprobar si un email ya existe (previene duplicados en el registro)
+
+```sql
+SELECT id FROM usuarios WHERE email = ? LIMIT 1;
+```
+
+- Autenticación: obtener usuario por email
+
+```sql
+SELECT id, nombre, email, password, rol FROM usuarios WHERE email = ? LIMIT 1;
+```
+
+Ejemplo de uso en PHP (esquema)
+-------------------------------
+
+- Preparar y ejecutar (mysqli):
+
+```php
+$stmt = $mysqli->prepare("SELECT id FROM usuarios WHERE email = ?");
+$stmt->bind_param('s', $email);
+$stmt->execute();
+$stmt->store_result();
+if($stmt->num_rows > 0){
+    // email duplicado
+}
+$stmt->close();
+```

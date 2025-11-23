@@ -52,5 +52,3 @@ function getComentariosComentario($id) {
     $stmt->close();
     return $res;
 }
-
-
