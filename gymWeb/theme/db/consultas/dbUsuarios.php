@@ -3,10 +3,9 @@
 
 include_once __DIR__ . "/../dbconfig/config.php";
 
-function getProyectos() {
+function getUsuarios() {
     global $mysqli;
-
-    $stmt = $mysqli->prepare("SELECT * FROM PORTAFOLIO");
+    $stmt = $mysqli->prepare("SELECT * FROM USUARIOS");
     if (!$stmt) {
         die("Error en prepare: " . $mysqli->error);
     }

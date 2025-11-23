@@ -2,10 +2,10 @@
 
 include_once __DIR__ . "/../dbconfig/config.php";
 
-function getTestimonios() {
+function getFAQS() {
     
     global $mysqli;
-    $stmt = $mysqli->prepare("SELECT * FROM TESTIMONIOS");
+    $stmt = $mysqli->prepare("SELECT * FROM FAQS");
     if (!$stmt) {
         die("Error en prepare: " . $mysqli->error);
     }

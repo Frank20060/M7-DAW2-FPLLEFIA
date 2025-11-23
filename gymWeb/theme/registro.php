@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     
     //1. Recogemos los datos
     
-    $nom = $_POST['nom'];
+    $nombre = $_POST['nombre'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $rol = 'usuario';
@@ -29,7 +29,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 
     //5. Bindeamos los parametros 
-    $stmt -> bind_param('sss', $nom, $email, $password_hasheada);
+    $stmt -> bind_param('sss', $nombre, $email, $password_hasheada);
 
     //6. Ejecutamos la consulta
 
