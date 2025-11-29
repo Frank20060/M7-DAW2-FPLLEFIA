@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $seccion !== '') {
                         <label class="form-label">Rol</label>
                         <select name="rol" class="form-select" required>
                             <option value="usuario">Usuario</option>
-                            <option value="administrador">Administrador</option>
+                            <option value="admin">Administrador</option>
                         </select>
                     </div>
 

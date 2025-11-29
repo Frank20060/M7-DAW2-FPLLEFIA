@@ -1,10 +1,10 @@
 <?php
 session_start();
 //Si no hay sesión activa o el rol no es admin, redirigir a login porque ese usuario no puede acceder a la pagina de control del admin
-// if (!isset($_SESSION['usuario']) || $_SESSION['rol'] != 'admin') {
-//     header("Location: ../login.php");
-//     exit();
-// }
+if (!isset($_SESSION['usuario']) || $_SESSION['rol'] != 'admin') {
+    header("Location: ../login.php");
+    exit();
+}
 
 include_once('./db/dbconfig/config.php');
 

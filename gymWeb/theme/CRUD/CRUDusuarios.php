@@ -10,7 +10,7 @@ function anadirUsuario() {
         $nombre   = $_POST['nombre'];
         $email    = $_POST['email'];
         $password = $_POST['password'];
-        $rol      = $_POST['rol']; // 'usuario' o 'administrador'
+        $rol      = $_POST['rol']; // 'usuario' o 'admin'
 
         // Opcional: hashear contraseña
         $hash = password_hash($password, PASSWORD_DEFAULT);
