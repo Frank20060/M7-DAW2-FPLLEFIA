@@ -1,14 +1,8 @@
 <?php
+////AÑADIR ELIMINAR Y EDITAR COMENTARIOS
 
-
-if (!isset($_SESSION['usuario'])) {   //El usuario normal puede acceder a esta pagina si esta logueado
-    //header("Location: ../login.php");
-    //exit();
-}
 
 include_once '../db/dbconfig/config.php';
-
-
 
 function añadirComentario() {   //habra un formulario en la pagina de admin (CUANDO LLEGE EL MOMENTO REVISAR LAS VARIABLES)
 
@@ -69,4 +63,28 @@ function editarComentario($id_comentario, $nuevo_comentario) {
 
     $stmt->close();
     return $actualizados > 0; // true si era suyo, false si no
+}
+
+//Elliminar comentario (el admin puede eliminar cualquier comentario)
+
+function eliminarComentario($id_comentario) {
+    global $mysqli;
+
+    //Preparamos la consulta
+    $consulta = 'DELETE FROM COMENTARIOS WHERE id_comentario = ?';
+    $stmt = $mysqli->prepare($consulta);
+
+    //2. Validamos los datos
+    if (!$stmt) {
+        die("Error en prepare: " . $mysqli->error);
+    }
+
+    //bindear los parametros
+    $stmt->bind_param("i", $id_comentario);
+
+    //3. Ejecutamos la consulta para eliminar el comentario
+    $stmt->execute();
+
+    //4.Cerrar la conexion
+    $stmt->close();
 }
