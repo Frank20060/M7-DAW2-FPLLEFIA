@@ -7,21 +7,21 @@
         <div class="col-md-3 col-6">
           <h4 class="text-white mb-5">About</h4>
           <ul class="list-unstyled">
-            <li><a href="#" class="text-light d-block mb-3">Service</a></li>
-            <li><a href="#" class="text-light d-block mb-3">Conatact</a></li>
-            <li><a href="#" class="text-light d-block mb-3">About us</a></li>
-            <li><a href="#" class="text-light d-block mb-3">Blog</a></li>
-            <li><a href="#" class="text-light d-block mb-3">Support</a></li>
+            <li><a href="./services.php" class="text-light d-block mb-3">Service</a></li>
+            <li><a href="./contact.php" class="text-light d-block mb-3">Conatact</a></li>
+            <li><a href="./about.php" class="text-light d-block mb-3">About us</a></li>
+            <li><a href="./blog" class="text-light d-block mb-3">Blog</a></li>
+            <li><a href="./admin.php" class="text-light d-block mb-3">Admin</a></li>
           </ul>
         </div>
         <div class="col-md-3 col-6">
           <h4 class="text-white mb-5">Company</h4>
           <ul class="list-unstyled">
-            <li><a href="#" class="text-light d-block mb-3">Service</a></li>
-            <li><a href="#" class="text-light d-block mb-3">Conatact</a></li>
-            <li><a href="#" class="text-light d-block mb-3">About us</a></li>
-            <li><a href="#" class="text-light d-block mb-3">Blog</a></li>
-            <li><a href="#" class="text-light d-block mb-3">Support</a></li>
+            <li><a href="./services.php" class="text-light d-block mb-3">Service</a></li>
+            <li><a href="./contact.php" class="text-light d-block mb-3">Conatact</a></li>
+            <li><a href="./about.php" class="text-light d-block mb-3">About us</a></li>
+            <li><a href="./blog" class="text-light d-block mb-3">Blog</a></li>
+            <li><a href="./admin.php" class="text-light d-block mb-3">Admin</a></li>
           </ul>
         </div>
         <div class="col-md-6">

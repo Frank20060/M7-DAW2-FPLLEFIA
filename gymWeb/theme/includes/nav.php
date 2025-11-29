@@ -1,6 +1,6 @@
 <header class="navigation fixed-top bg-dark">
   <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="./index.php"><img src="./images/logo.png" alt="BlackPeak Fitness logo"></a>
+    <a class="navbar-brand" href="./index.php"><h2 class="text-white">BlackPeak</h2></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
       aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

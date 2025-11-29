@@ -95,7 +95,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 							</div>
 						</form>
 						<div class="mt-3 text-center small text-muted">
-							¿Ya tienes cuenta? <a href="./login.php" class="link-primary">Inicia sesión</a>
+							¿Ya tienes cuenta? <a href="./login.php" class="link-primary ">Inicia sesión</a>
 						</div>
 					</div>
 				</div>
