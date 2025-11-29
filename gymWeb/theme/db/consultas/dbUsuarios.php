@@ -14,3 +14,21 @@ function getUsuarios() {
     $stmt->close();
     return $res;
 }
+
+function getUsuarioById($id) {
+    global $mysqli;
+
+    $stmt = $mysqli->prepare("SELECT * FROM USUARIOS WHERE id = ? LIMIT 1");
+    if (!$stmt) {
+        die("Error en prepare: " . $mysqli->error);
+    }
+
+    $stmt->bind_param("i", $id);   // i = integer
+    $stmt->execute();
+
+    $res = $stmt->get_result()->fetch_assoc(); // un solo registro
+    $stmt->close();
+
+    return $res; // array asociativo o null si no existe
+}
+
