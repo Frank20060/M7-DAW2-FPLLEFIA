@@ -1,10 +1,7 @@
 <?php
-////AÑADIR ELIMINAR Y EDITAR COMENTARIOS
+include_once __DIR__ . '/../db/dbconfig/config.php';
 
-
-include_once '../db/dbconfig/config.php';
-
-function añadirComentario() {   //habra un formulario en la pagina de admin (CUANDO LLEGE EL MOMENTO REVISAR LAS VARIABLES)
+function anadirComentario() {   //habra un formulario en la pagina de admin (CUANDO LLEGE EL MOMENTO REVISAR LAS VARIABLES)
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //Codigo para añadir comentario

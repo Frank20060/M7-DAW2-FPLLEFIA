@@ -8,6 +8,44 @@ if (!isset($_SESSION['usuario']) || $_SESSION['rol'] != 'admin') {
 }
 
 $seccion = isset($_GET['seccion']) ? $_GET['seccion'] : '';
+
+// Procesar alta
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $seccion !== '') {
+    switch ($seccion) {
+        case 'usuarios':
+            include_once './CRUD/CRUDusuarios.php';
+            anadirUsuario();
+            break;
+
+        case 'noticias':
+            include_once './CRUD/CRUDnoticia.php';
+            anadirNoticia();
+            break;
+
+        case 'comentarios':
+            include_once './CRUD/CRUDcomentarios.php';
+            anadirComentario();
+            break;
+
+        case 'faqs':
+            include_once './CRUD/CRUDfaqs.php';
+            anadirFAQ();
+            break;
+
+        case 'portafolio':
+            include_once './CRUD/CRUDtrabajos.php';
+            anadirProyecto();
+            break;
+
+        case 'testimonios':
+            include_once './CRUD/CRUDtestimonios.php';
+            anadirTestimonio();
+            break;
+    }
+
+    header('Location: admin.php?section=' . urlencode($seccion));
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -29,7 +67,7 @@ $seccion = isset($_GET['seccion']) ? $_GET['seccion'] : '';
     <div class="card shadow-sm">
         <div class="card-body">
             <?php if ($seccion == 'usuarios'): ?>
-                <form method="POST" action="procesar_anadir.php?seccion=usuarios" class="row g-3">
+                <form method="POST" action="" class="row g-3">
                     <div class="col-md-6">
                         <label class="form-label">Nombre</label>
                         <input type="text" name="nombre" class="form-control" required>
@@ -59,7 +97,7 @@ $seccion = isset($_GET['seccion']) ? $_GET['seccion'] : '';
                 </form>
 
             <?php elseif ($seccion == 'noticias'): ?>
-                <form method="POST" action="procesar_anadir.php?seccion=noticias" class="row g-3">
+                <form method="POST" action="" class="row g-3">
                     <div class="col-md-6">
                         <label class="form-label">Título</label>
                         <input type="text" name="titulo" class="form-control" required>
@@ -86,7 +124,7 @@ $seccion = isset($_GET['seccion']) ? $_GET['seccion'] : '';
                 </form>
 
             <?php elseif ($seccion == 'comentarios'): ?>
-                <form method="POST" action="procesar_anadir.php?seccion=comentarios" class="row g-3">
+                <form method="POST" action="" class="row g-3">
                     <div class="col-md-4">
                         <label class="form-label">ID noticia</label>
                         <input type="number" name="id_noticia" class="form-control" required>
@@ -118,7 +156,7 @@ $seccion = isset($_GET['seccion']) ? $_GET['seccion'] : '';
                 </form>
 
             <?php elseif ($seccion == 'faqs'): ?>
-                <form method="POST" action="procesar_anadir.php?seccion=faqs" class="row g-3">
+                <form method="POST" action="" class="row g-3">
                     <div class="col-12">
                         <label class="form-label">Pregunta</label>
                         <input type="text" name="pregunta" class="form-control" required>
@@ -135,7 +173,7 @@ $seccion = isset($_GET['seccion']) ? $_GET['seccion'] : '';
                 </form>
 
             <?php elseif ($seccion == 'portafolio'): ?>
-                <form method="POST" action="procesar_anadir.php?seccion=portafolio" class="row g-3" enctype="multipart/form-data">
+                <form method="POST" action="" class="row g-3">
                     <div class="col-md-6">
                         <label class="form-label">Título</label>
                         <input type="text" name="titulo" class="form-control" required>
@@ -154,7 +192,6 @@ $seccion = isset($_GET['seccion']) ? $_GET['seccion'] : '';
                     <div class="col-md-6">
                         <label class="form-label">Imagen (nombre de archivo o subida)</label>
                         <input type="text" name="imagen" class="form-control" placeholder="diseno_web.jpg" required>
-                        <!-- o input type="file" si luego lo gestionas -->
                     </div>
 
                     <div class="col-12 text-end">
@@ -163,7 +200,7 @@ $seccion = isset($_GET['seccion']) ? $_GET['seccion'] : '';
                 </form>
 
             <?php elseif ($seccion == 'testimonios'): ?>
-                <form method="POST" action="procesar_anadir.php?seccion=testimonios" class="row g-3">
+                <form method="POST" action="" class="row g-3">
                     <div class="col-md-6">
                         <label class="form-label">Nombre</label>
                         <input type="text" name="nombre" class="form-control" required>
@@ -207,7 +244,6 @@ $seccion = isset($_GET['seccion']) ? $_GET['seccion'] : '';
     </div>
 </div>
 
-<!-- Bootstrap JS (opcional para componentes interactivos) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

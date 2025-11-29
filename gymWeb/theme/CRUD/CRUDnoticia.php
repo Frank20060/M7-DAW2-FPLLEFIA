@@ -1,5 +1,6 @@
 <?php
-include_once '../db/dbconfig/config.php';
+include_once __DIR__ . '/../db/dbconfig/config.php';
+
 
 //// AÑADIR, EDITAR Y ELIMINAR NOTICIAS
 
