@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 include_once './db/dbconfig/config.php';
 
@@ -164,16 +165,17 @@ if (!$registro) {
         <div class="card-body">
 
             <?php if ($seccion === 'usuarios'): ?>
+                <!-- ========== USUARIOS ========== -->
                 <form method="POST" action="">
                     <div class="mb-3">
                         <label class="form-label">Nombre</label>
                         <input type="text" name="nombre" class="form-control"
-                               value="<?= htmlspecialchars($registro['nombre']) ?>" required>
+                            value="<?= htmlspecialchars($registro['nombre']) ?>" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Email</label>
                         <input type="email" name="email" class="form-control"
-                               value="<?= htmlspecialchars($registro['email']) ?>" required>
+                            value="<?= htmlspecialchars($registro['email']) ?>" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Rol</label>
@@ -198,9 +200,28 @@ if (!$registro) {
                 </form>
 
             <?php elseif ($seccion === 'comentarios'): ?>
+                <!-- ========== COMENTARIOS ========== -->
                 <form method="POST" action="">
-                    <!-- tus campos de comentario igual que ya los tienes -->
-                    <!-- ... -->
+                    <div class="mb-3">
+                        <label class="form-label">ID Noticia</label>
+                        <input type="number" name="id_noticia" class="form-control"
+                            value="<?= htmlspecialchars($registro['id_noticia']) ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">ID Usuario</label>
+                        <input type="number" name="id_usuario" class="form-control"
+                            value="<?= htmlspecialchars($registro['id_usuario']) ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Comentario</label>
+                        <textarea name="comentario" class="form-control" rows="4" required><?= htmlspecialchars($registro['comentario']) ?></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Fecha</label>
+                        <input type="datetime-local" name="fecha" class="form-control"
+                            value="<?= htmlspecialchars($registro['fecha']) ?>" required>
+                    </div>
+
                     <div class="d-flex justify-content-between">
                         <button type="submit" name="accion" value="editar" class="btn btn-dark">Guardar cambios</button>
                         <button type="submit" name="accion" value="eliminar"
@@ -211,11 +232,135 @@ if (!$registro) {
                     </div>
                 </form>
 
-            <!-- deja el resto de secciones igual que ya las tienes,
-                 solo cambiando el action a "" y los botones por:
-                 name="accion" value="editar"/"eliminar" -->
+            <?php elseif ($seccion === 'faqs'): ?>
+                <!-- ========== FAQS ========== -->
+                <form method="POST" action="">
+                    <div class="mb-3">
+                        <label class="form-label">Pregunta</label>
+                        <input type="text" name="pregunta" class="form-control"
+                            value="<?= htmlspecialchars($registro['pregunta']) ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Respuesta</label>
+                        <textarea name="respuesta" class="form-control" rows="4" required><?= htmlspecialchars($registro['respuesta']) ?></textarea>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="submit" name="accion" value="editar" class="btn btn-dark">Guardar cambios</button>
+                        <button type="submit" name="accion" value="eliminar"
+                                class="btn btn-danger"
+                                onclick="return confirm('¿Seguro que quieres eliminar esta FAQ?');">
+                            Eliminar
+                        </button>
+                    </div>
+                </form>
+
+            <?php elseif ($seccion === 'portafolio'): ?>
+                <!-- ========== PORTAFOLIO / PROYECTOS ========== -->
+                <form method="POST" action="">
+                    <div class="mb-3">
+                        <label class="form-label">Título</label>
+                        <input type="text" name="titulo" class="form-control"
+                            value="<?= htmlspecialchars($registro['titulo']) ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Descripción</label>
+                        <textarea name="descripcion" class="form-control" rows="4" required><?= htmlspecialchars($registro['descripcion']) ?></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">URL / Ruta de imagen</label>
+                        <input type="text" name="imagen" class="form-control"
+                            value="<?= htmlspecialchars($registro['imagen']) ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Categoría</label>
+                        <input type="text" name="categoria" class="form-control"
+                            value="<?= htmlspecialchars($registro['categoria']) ?>" required>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="submit" name="accion" value="editar" class="btn btn-dark">Guardar cambios</button>
+                        <button type="submit" name="accion" value="eliminar"
+                                class="btn btn-danger"
+                                onclick="return confirm('¿Seguro que quieres eliminar este proyecto?');">
+                            Eliminar
+                        </button>
+                    </div>
+                </form>
+
+            <?php elseif ($seccion === 'noticias'): ?>
+                <!-- ========== NOTICIAS ========== -->
+                <form method="POST" action="">
+                    <div class="mb-3">
+                        <label class="form-label">Título</label>
+                        <input type="text" name="titulo" class="form-control"
+                            value="<?= htmlspecialchars($registro['titulo']) ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Subtítulo</label>
+                        <input type="text" name="subtitulo" class="form-control"
+                            value="<?= htmlspecialchars($registro['subtitulo']) ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Cuerpo</label>
+                        <textarea name="cuerpo" class="form-control" rows="6" required><?= htmlspecialchars($registro['cuerpo']) ?></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Fecha publicación</label>
+                        <input type="date" name="fecha_publicacion" class="form-control"
+                            value="<?= htmlspecialchars($registro['fecha_publicacion']) ?>" required>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="submit" name="accion" value="editar" class="btn btn-dark">Guardar cambios</button>
+                        <button type="submit" name="accion" value="eliminar"
+                                class="btn btn-danger"
+                                onclick="return confirm('¿Seguro que quieres eliminar esta noticia?');">
+                            Eliminar
+                        </button>
+                    </div>
+                </form>
+
+            <?php elseif ($seccion === 'testimonios'): ?>
+                <!-- ========== TESTIMONIOS ========== -->
+                <form method="POST" action="">
+                    <div class="mb-3">
+                        <label class="form-label">Nombre</label>
+                        <input type="text" name="nombre" class="form-control"
+                            value="<?= htmlspecialchars($registro['nombre']) ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Apellido</label>
+                        <input type="text" name="apellido" class="form-control"
+                            value="<?= htmlspecialchars($registro['apellido']) ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Testimonio</label>
+                        <textarea name="testimonio" class="form-control" rows="4" required><?= htmlspecialchars($registro['testimonio']) ?></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">URL / Ruta de imagen</label>
+                        <input type="text" name="imagen" class="form-control"
+                            value="<?= htmlspecialchars($registro['imagen']) ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Fecha</label>
+                        <input type="date" name="fecha" class="form-control"
+                            value="<?= htmlspecialchars($registro['fecha']) ?>" required>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="submit" name="accion" value="editar" class="btn btn-dark">Guardar cambios</button>
+                        <button type="submit" name="accion" value="eliminar"
+                                class="btn btn-danger"
+                                onclick="return confirm('¿Seguro que quieres eliminar este testimonio?');">
+                            Eliminar
+                        </button>
+                    </div>
+                </form>
 
             <?php endif; ?>
+
 
         </div>
     </div>
