@@ -208,67 +208,40 @@
 <!-- /about -->
 
 <!-- project -->
-<section class="section">
-  <div class="container-fluid px-0">
-    <div class="row">
-      <div class="col-lg-10 mx-auto text-center">
-        <h2>Nuestros Programas</h2>
-        <div class="section-border"></div>
+<section class="section py-5">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="h3 mb-2">Nuestros Programas</h2>
+        <div class="section-border mx-auto"></div>
       </div>
     </div>
 
-    <div class="row no-gutters shuffle-wrapper">
-      <div class="col-lg-4 col-md-6 shuffle-item">
-        <div class="project-item">
-          <img src="./images/project/project-1.jpg" alt="project-image" class="img-fluid w-100">
-          <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Project title</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
+    <?php
+      include_once './db/consultas/dbPortfolio.php';
+      $trabajos = getProyectos();
+    ?>
+
+    <div class="row g-4 justify-content-center">
+      <?php foreach ($trabajos as $trabajo) { ?>
+        <div class="col-12 col-sm-6 col-lg-3 shuffle-item" data-groups='["branding"]'>
+          <div class="card text-light border-0 h-100 shadow-sm">
+            <img src="<?php echo $trabajo['imagen']; ?>" alt="project-image" class="card-img-top img-fluid">
+            <div class="card-body text-center px-3 py-4">
+              <h4 class="card-title h6 mb-2"><?php echo $trabajo['titulo']; ?></h4>
+              <p class="card-text small mb-0 text-muted"><?php echo $trabajo['descripcion']; ?></p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-6 shuffle-item">
-        <div class="project-item">
-          <img src="./images/project/project-2.jpg" alt="project-image" class="img-fluid w-100">
-          <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Project title</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 shuffle-item">
-        <div class="project-item">
-          <img src="./images/project/project-3.jpg" alt="project-image" class="img-fluid w-100">
-          <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Project title</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 shuffle-item">
-        <div class="project-item">
-          <img src="./images/project/project-4.jpg" alt="project-image" class="img-fluid w-100">
-          <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Project title</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 shuffle-item">
-        <div class="project-item">
-          <img src="./images/project/project-5.jpg" alt="project-image" class="img-fluid w-100">
-          <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Project title</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
-          </div>
-        </div>
-      </div>
+      <?php } ?>
     </div>
   </div>
 </section>
+
 <!-- /project -->
 
 <!-- call to action -->
+
 <section>
   <div class="container section-sm overlay-secondary-half bg-cover" data-background="./images/backgrounds/cta-bg.jpg">
   <div class="row">
@@ -282,121 +255,45 @@
 </section>
 <!-- /call to action -->
 
-<!-- pricing -->
-<section class="section pb-0">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-10 mx-auto text-center">
-        <h2>Nuestros Planes</h2>
-        <div class="section-border"></div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-        <div class="card bottom-shape bg-secondary pt-4 pb-5">
-          <div class="card-body text-center">
-            <h4 class="text-white">Basic</h4>
-            <p class="text-light mb-4">Besic and simple website</p>
-            <p class="text-white mb-4">$ <span class="display-3 font-weight-bold vertical-align-middle">30</span></p>
-            <ul class="list-unstyled mb-5">
-              <li class="text-white mb-3">Mobile-Optimized Website</li>
-              <li class="text-white mb-3">Powerful Website Metrics</li>
-              <li class="text-white mb-3">Free Custom Domain</li>
-              <li class="text-white mb-3">24/7 Customer Support</li>
-              <li class="text-white mb-3">Fully Integrated E-Cormmerce</li>
-              <li class="text-white mb-3">Sell unlimited Product</li>
-            </ul>
-            <a href="#" class="btn btn-outline-light">Try it now</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-        <div class="card bottom-shape bg-secondary pt-4 pb-5">
-          <div class="card-body text-center">
-            <h4 class="text-white">Basic</h4>
-            <p class="text-light mb-4">Besic and simple website</p>
-            <p class="text-white mb-4">$ <span class="display-3 font-weight-bold vertical-align-middle">30</span></p>
-            <ul class="list-unstyled mb-5">
-              <li class="text-white mb-3">Mobile-Optimized Website</li>
-              <li class="text-white mb-3">Powerful Website Metrics</li>
-              <li class="text-white mb-3">Free Custom Domain</li>
-              <li class="text-white mb-3">24/7 Customer Support</li>
-              <li class="text-white mb-3">Fully Integrated E-Cormmerce</li>
-              <li class="text-white mb-3">Sell unlimited Product</li>
-            </ul>
-            <a href="#" class="btn btn-outline-light">Try it now</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-        <div class="card bottom-shape bg-secondary pt-4 pb-5">
-          <div class="card-body text-center">
-            <h4 class="text-white">Basic</h4>
-            <p class="text-light mb-4">Besic and simple website</p>
-            <p class="text-white mb-4">$ <span class="display-3 font-weight-bold vertical-align-middle">30</span></p>
-            <ul class="list-unstyled mb-5">
-              <li class="text-white mb-3">Mobile-Optimized Website</li>
-              <li class="text-white mb-3">Powerful Website Metrics</li>
-              <li class="text-white mb-3">Free Custom Domain</li>
-              <li class="text-white mb-3">24/7 Customer Support</li>
-              <li class="text-white mb-3">Fully Integrated E-Cormmerce</li>
-              <li class="text-white mb-3">Sell unlimited Product</li>
-            </ul>
-            <a href="#" class="btn btn-outline-light">Try it now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- /pricing -->
-
 <!-- blog -->
-<section class="section">
+<section class="section py-5">
+  <?php
+    include_once './db/consultas/dbNoticias.php';
+    $noticiasTres = getTreeLatestNews();
+    $i = 0;
+  ?>
+
   <div class="container">
-    <div class="row">
-      <div class="col-lg-10 mx-auto text-center">
-        <h2>Latest News</h2>
-        <div class="section-border"></div>
+    <div class="row mb-4">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="h3 mb-2">Latest News</h2>
+        <div class="section-border mx-auto"></div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-        <article class="card">
-          <img src="./images/blog/post-1.jpg" alt="post-thumb" class="card-img-top mb-2">
-          <div class="card-body p-0">
-            <time>January 15, 2018</time>
-            <a href="./blog-single" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
-              Book Covers Reflect the Design</a>
-            <a href="#" class="btn btn-transparent">Read more</a>
-          </div>
-        </article>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-        <article class="card">
-          <img src="./images/blog/post-2.jpg" alt="post-thumb" class="card-img-top mb-2">
-          <div class="card-body p-0">
-            <time>January 15, 2018</time>
-            <a href="./blog-single" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
-              Book Covers Reflect the Design</a>
-            <a href="#" class="btn btn-transparent">Read more</a>
-          </div>
-        </article>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-        <article class="card">
-          <img src="./images/blog/post-3.jpg" alt="post-thumb" class="card-img-top mb-2">
-          <div class="card-body p-0">
-            <time>January 15, 2018</time>
-            <a href="./blog-single" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
-              Book Covers Reflect the Design</a>
-            <a href="#" class="btn btn-transparent">Read more</a>
-          </div>
-        </article>
-      </div>
+
+    <div class="row g-4 justify-content-center">
+      <?php foreach ($noticiasTres as $noticia) { ?>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="card h-100 border-0 shadow-sm">
+            <img src="<?php echo $noticia['imagen']; ?>" alt="post-thumb" class="card-img-top">
+            <div class="card-body">
+              <time class="d-block small text-muted mb-2">
+                <?php echo $noticia['fecha_publicacion']; ?>
+              </time>
+              <a href="./blog-single.php?id=<?php echo (int)$noticia['id']; ?>" class="h5 card-title d-block mb-3 text-dark text-decoration-none">
+                <?php echo $noticia['titulo']; ?>
+              </a>
+              <a href="./blog-single.php?id=<?php echo (int)$noticia['id']; ?>" class="btn btn-outline-primary btn-sm">
+                Read more
+              </a>
+            </div>
+          </article>
+        </div>
+      <?php } ?>
     </div>
   </div>
 </section>
+
 <!-- /blog -->
 
 <?php include './includes/footer.php';?>

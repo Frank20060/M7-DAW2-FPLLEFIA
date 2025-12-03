@@ -82,9 +82,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $subtitulo         = $_POST['subtitulo'];
                 $cuerpo            = $_POST['cuerpo'];
                 $fecha_publicacion = $_POST['fecha_publicacion'];
-                editarNoticia($id, $titulo, $subtitulo, $cuerpo, $fecha_publicacion);
+                $imagen            = $_POST['imagen']; // nueva ruta de imagen
+                editarNoticia($id, $titulo, $subtitulo, $cuerpo, $fecha_publicacion, $imagen);
             }
             break;
+
 
         case 'testimonios':
             include_once './CRUD/CRUDtestimonios.php';
@@ -309,6 +311,11 @@ if (!$registro) {
                         <label class="form-label">Fecha publicación</label>
                         <input type="date" name="fecha_publicacion" class="form-control"
                             value="<?= htmlspecialchars($registro['fecha_publicacion']) ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">URL / Ruta de imagen</label>
+                        <input type="text" name="imagen" class="form-control"
+                            value="<?= htmlspecialchars($registro['imagen'] ?? '') ?>">
                     </div>
 
                     <div class="d-flex justify-content-between">

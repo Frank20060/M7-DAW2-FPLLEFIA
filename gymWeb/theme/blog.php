@@ -11,111 +11,35 @@
 </section>
 <!-- /page-title -->
 
+  <?php
+    include_once './db/consultas/dbNoticias.php';
+    $noticiasTres = getNoticias();
+    $i = 0;
+  ?>
+
+
 <!-- blog -->
 <section class="section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-md-6 mb-4">
-        <article class="card">
-          <img src="images/blog/post-1.jpg" alt="post-thumb" class="card-img-top mb-2">
-          <div class="card-body p-0">
-            <time>January 15, 2018</time>
-            <a href="./blog-single.php" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
-              Book Covers Reflect the Design</a>
-            <a href="./blog-single.php" class="btn btn-transparent">Read more</a>
+  <div class="row g-4 justify-content-center">
+    <?php foreach ($noticiasTres as $noticia) { $i++?>
+      <div class="col-12 col-md-6 col-lg-4 id="noticia-<?php echo $i; ?>">
+        <article class="card h-100 border-0 shadow-sm">
+          <img src="<?php echo $noticia['imagen']; ?>" alt="post-thumb" class="card-img-top">
+          <div class="card-body">
+            <time class="d-block small text-muted mb-2">
+              <?php echo $noticia['fecha_publicacion']; ?>
+            </time>
+            <a href="./blog-single.php?id=<?php echo (int)$noticia['id']; ?>" class="h5 card-title d-block mb-3 text-dark text-decoration-none">
+              <?php echo $noticia['titulo']; ?>
+            </a>
+            <a href="./blog-single.php?id=<?php echo (int)$noticia['id']; ?>" class="btn btn-outline-primary btn-sm">
+              Read more
+            </a>
           </div>
         </article>
       </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <article class="card">
-          <img src="images/blog/post-2.jpg" alt="post-thumb" class="card-img-top mb-2">
-          <div class="card-body p-0">
-            <time>January 15, 2018</time>
-            <a href="./blog-single.php" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
-              Book Covers Reflect the Design</a>
-            <a href="./blog-single.php" class="btn btn-transparent">Read more</a>
-          </div>
-        </article>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <article class="card">
-          <img src="images/blog/post-3.jpg" alt="post-thumb" class="card-img-top mb-2">
-          <div class="card-body p-0">
-            <time>January 15, 2018</time>
-            <a href="./blog-single.php" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
-              Book Covers Reflect the Design</a>
-            <a href="./blog-single.php" class="btn btn-transparent">Read more</a>
-          </div>
-        </article>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <article class="card">
-          <img src="images/blog/post-1.jpg" alt="post-thumb" class="card-img-top mb-2">
-          <div class="card-body p-0">
-            <time>January 15, 2018</time>
-            <a href="./blog-single.php" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
-              Book Covers Reflect the Design</a>
-            <a href="./blog-single.php" class="btn btn-transparent">Read more</a>
-          </div>
-        </article>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <article class="card">
-          <img src="images/blog/post-2.jpg" alt="post-thumb" class="card-img-top mb-2">
-          <div class="card-body p-0">
-            <time>January 15, 2018</time>
-            <a href="./blog-single.php" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
-              Book Covers Reflect the Design</a>
-            <a href="./blog-single.php" class="btn btn-transparent">Read more</a>
-          </div>
-        </article>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <article class="card">
-          <img src="images/blog/post-3.jpg" alt="post-thumb" class="card-img-top mb-2">
-          <div class="card-body p-0">
-            <time>January 15, 2018</time>
-            <a href="./blog-single.php" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
-              Book Covers Reflect the Design</a>
-            <a href="./blog-single.php" class="btn btn-transparent">Read more</a>
-          </div>
-        </article>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <article class="card">
-          <img src="images/blog/post-1.jpg" alt="post-thumb" class="card-img-top mb-2">
-          <div class="card-body p-0">
-            <time>January 15, 2018</time>
-            <a href="./blog-single.php" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
-              Book Covers Reflect the Design</a>
-            <a href="./blog-single.php" class="btn btn-transparent">Read more</a>
-          </div>
-        </article>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <article class="card">
-          <img src="images/blog/post-2.jpg" alt="post-thumb" class="card-img-top mb-2">
-          <div class="card-body p-0">
-            <time>January 15, 2018</time>
-            <a href="./blog-single.php" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
-              Book Covers Reflect the Design</a>
-            <a href="./blog-single.php" class="btn btn-transparent">Read more</a>
-          </div>
-        </article>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <article class="card">
-          <img src="images/blog/post-3.jpg" alt="post-thumb" class="card-img-top mb-2">
-          <div class="card-body p-0">
-            <time>January 15, 2018</time>
-            <a href="./blog-single.php" class="h4 card-title d-block my-3 text-dark hover-text-underline">How These Different
-              Book Covers Reflect the Design</a>
-            <a href="./blog-single.php" class="btn btn-transparent">Read more</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
+    <?php } ?>
+  </div> 
 </section>
 <!-- /blog -->
 
