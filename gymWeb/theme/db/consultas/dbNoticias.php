@@ -94,7 +94,7 @@ function renderNoticiaWithComments($noticia, $comments) {
     $html .= '<p class="card-text">' . $noticia['cuerpo'] . '</p>';
     $html .= '</div>';
     $html .= '<div class="card-footer text-muted">';
-    $html .= 'Publicado el ' . $noticia['fecha'];
+    $html .= 'Publicado el ' . $noticia['fecha_publicacion'];
     $html .= '</div>';
     $html .= '</div>'; // .card
 
