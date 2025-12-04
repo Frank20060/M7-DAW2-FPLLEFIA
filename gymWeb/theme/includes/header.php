@@ -62,35 +62,26 @@ if (session_status() === PHP_SESSION_NONE) {
         <li class="nav-item">
           <a class="nav-link" href="./index.php">Inicio</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./about.php">Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./services.php">Servicios</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./blog.php">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./works.php">Entrenamientos</a>
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
              aria-haspopup="true" aria-expanded="false">Pages</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="./blog-single.php">Artículo</a>
-            <a class="dropdown-item" href="./faqs.php">Preguntas</a>
+            <a class="dropdown-item" href="./blog.php">Noticias</a>
+            <a class="dropdown-item" href="./works.php">Portfolio</a>
+            <a class="dropdown-item" href="./testimonios.php">Testimonios</a>
           </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./contact.php">Contacto</a>
         </li>
 
-        <?php if (isset($_SESSION['usuario'])): ?>
+        <?php if (isset($_SESSION['user_id'])): ?>
           <!-- Logueado: opcional enlace al panel + cerrar sesión -->
-          <li class="nav-item">
-            <a class="nav-link" href="./admin.php">Panel</a>
-          </li>
+            <?php if (isset($_SESSION['usuario']) && $_SESSION['rol']== 'admin'): ?>
+              <li class="nav-item">
+                <a class="nav-link" href="./admin.php">Panel</a>
+              </li>
+            <?php endif; ?>
           <li class="nav-item">
             <a class="nav-link" href="./logout.php">Cerrar sesión</a>
           </li>

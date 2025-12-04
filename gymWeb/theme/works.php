@@ -12,90 +12,25 @@
 <!-- /page-title -->
 
 <!-- project -->
-<section>
-  <div class="container-fluid px-0">
-    <div class="row no-gutters shuffle-wrapper">
-      <div class="col-lg-4 col-md-6 shuffle-item">
-        <div class="project-item">
-          <img src="images/project/project-1.jpg" alt="project-image" class="img-fluid w-100">
-          <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Programa Fuerza Total</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
+ <section class="mt-4">
+  <h1 class="text-center justify-center m-4">Nuestros Trabajos</h1>
+  <?php
+    include_once './db/consultas/dbPortfolio.php';
+    $trabajos = getProyectos();
+  ?>
+
+    <div class="row g-4 justify-content-center">
+      <?php foreach ($trabajos as $trabajo) { ?>
+        <div class="col-12 col-sm-6 col-lg-3 shuffle-item" data-groups='["branding"]'>
+          <div class="card text-light border-0 h-100 shadow-sm">
+            <img src="<?php echo $trabajo['imagen']; ?>" alt="project-image" class="card-img-top img-fluid">
+            <div class="card-body text-center px-3 py-4">
+              <h4 class="card-title h6 mb-2"><?php echo $trabajo['titulo']; ?></h4>
+              <p class="card-text small mb-0 text-muted"><?php echo $trabajo['descripcion']; ?></p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-6 shuffle-item">
-        <div class="project-item">
-          <img src="images/project/project-2.jpg" alt="project-image" class="img-fluid w-100">
-          <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">HIIT y Acondicionamiento</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 shuffle-item">
-        <div class="project-item">
-          <img src="images/project/project-3.jpg" alt="project-image" class="img-fluid w-100">
-          <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Movilidad y Recuperación</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 shuffle-item">
-        <div class="project-item">
-          <img src="images/project/project-4.jpg" alt="project-image" class="img-fluid w-100">
-          <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Entrenamiento Funcional</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 shuffle-item">
-        <div class="project-item">
-          <img src="images/project/project-5.jpg" alt="project-image" class="img-fluid w-100">
-          <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Plan de Competición</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-8 shuffle-item">
-        <div class="project-item">
-          <img src="images/project/project-6.jpg" alt="project-image" class="img-fluid w-100">
-          <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Transformación 12 semanas</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 shuffle-item">
-        <div class="project-item">
-          <img src="images/project/project-7.jpg" alt="project-image" class="img-fluid w-100">
-          <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Project title</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 shuffle-item">
-        <div class="project-item">
-          <img src="images/project/project-1.jpg" alt="project-image" class="img-fluid w-100">
-          <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Project title</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 shuffle-item">
-        <div class="project-item">
-          <img src="images/project/project-3.jpg" alt="project-image" class="img-fluid w-100">
-          <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Project title</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
-          </div>
-        </div>
-      </div>
+      <?php } ?>
     </div>
   </div>
 </section>

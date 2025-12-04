@@ -19,7 +19,7 @@ function getComentariosNoticia($id) {
     global $mysqli;
 
     $consulta = 
-    'SELECT c.id, c.comentario, c.fecha, c.id_respuesta, u.id AS id_user, u.nombre, u.apellido, u.imagen 
+    'SELECT c.id, c.comentario, c.fecha, c.id_respuesta, u.id AS id_user, u.nombre 
     FROM COMENTARIOS c
     JOIN USUARIOS u ON c.id_usuario = u.id
     WHERE c.id_noticia = ?
@@ -46,7 +46,7 @@ function getComentariosComentario($id) {
 
     $consulta =
     '
-    SELECT c.id, c.comentario, c.fecha, c.id_respuesta, u.id AS id_user, u.nombre, u.apellido, u.imagen
+    SELECT c.id, c.comentario, c.fecha, c.id_respuesta, u.id AS id_user, u.nombre, u.imagen
     FROM COMENTARIOS c
     JOIN USUARIOS u ON c.id_usuario = u.id
     WHERE c.id_respuesta = ?

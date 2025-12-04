@@ -55,12 +55,14 @@ function renderNoticiasList($noticias) {
 
         $html .= '<div class="card-body">';
         $html .= '<h5 class="card-title">' . $noticia['titulo'] . '</h5>';
-        $html .= '<p class="card-text">' . $noticia['contenido'] . '</p>';
+        $html .= '<p class="card-text">' . $noticia['subtitulo'] . '</p>';
+        $html .= '<img src="' . $noticia['imagen'] . '" alt="noticia-image" class="img-fluid mb-3">';
+        
         $html .= '</div>';
 
         $html .= '<div class="card-footer d-flex justify-content-between align-items-center">';
         $html .= '<small class="text-muted">' . $noticia['fecha_publicacion'] . '</small>';
-        $html .= '<a href="noticia.php?id=' . (int)$noticia['id'] . '" class="btn btn-sm btn-primary">Ver más</a>';
+        $html .= '<a href="blog-single.php?id=' . (int)$noticia['id'] . '" class="btn btn-sm btn-primary">Ver más</a>';
         $html .= '</div>';
 
         $html .= '</div>'; // .card
@@ -87,10 +89,12 @@ function renderNoticiaWithComments($noticia, $comments) {
     $html .= '<div class="card mb-4 shadow-sm">';
     $html .= '<div class="card-body">';
     $html .= '<h2 class="card-title">' . $noticia['titulo'] . '</h2>';
-    $html .= '<p class="card-text">' . $noticia['contenido'] . '</p>';
+    $html .= '<h4 class="card-subtitle mb-3 text-muted">' . $noticia['subtitulo'] . '</h4>';
+    $html .= '<img src="' . $noticia['imagen'] . '" alt="noticia-image" class="img-fluid mb-4">';
+    $html .= '<p class="card-text">' . $noticia['cuerpo'] . '</p>';
     $html .= '</div>';
     $html .= '<div class="card-footer text-muted">';
-    $html .= 'Publicado el ' . $noticia['fecha_publicacion'];
+    $html .= 'Publicado el ' . $noticia['fecha'];
     $html .= '</div>';
     $html .= '</div>'; // .card
 
@@ -105,8 +109,8 @@ function renderNoticiaWithComments($noticia, $comments) {
         $html .= '<ul class="list-group list-group-flush">';
         foreach ($comments as $comment) {
             $html .= '<li class="list-group-item">';
-            $html .= '<p class="mb-1">' . $comment['contenido'] . '</p>';
-            $html .= '<small class="text-muted">' . $comment['fecha_publicacion'] . '</small>';
+            $html .= '<p class="mb-1">' . htmlspecialchars($comment['comentario']) . '</p>';
+            $html .= '<small class="text-muted">' . htmlspecialchars($comment['fecha']) . '</small>';
             $html .= '</li>';
         }
         $html .= '</ul>';
