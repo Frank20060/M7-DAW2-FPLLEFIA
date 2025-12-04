@@ -1,0 +1,85 @@
+:root {
+    --primary-blue: #1e3a5f;
+    --secondary-blue: #2c5282;
+    --accent-orange: #f6a623;
+    --light-orange: #fbd38d;
+    --white: #ffffff;
+    --light-gray: #f7fafc;
+}
+
+body {
+    background-color: var(--light-gray);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-custom {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-custom .navbar-brand {
+    color: var(--accent-orange) !important;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.sidebar {
+    background: var(--primary-blue);
+    min-height: 100vh;
+    padding-top: 1rem;
+}
+
+.sidebar .nav-link {
+    color: rgba(255,255,255,0.8);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    margin: 0.2rem 0.5rem;
+    transition: all 0.3s;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background: var(--accent-orange);
+    color: var(--white);
+}
+
+.card-custom {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.card-custom:hover {
+    transform: translateY(-5px);
+}
+
+.btn-orange {
+    background: var(--accent-orange);
+    border: none;
+    color: var(--white);
+    border-radius: 8px;
+}
+
+.btn-orange:hover {
+    background: #e09300;
+    color: var(--white);
+}
+
+.badge-disponible { background: #48bb78; }
+.badge-no-disponible { background: #f56565; }
+.badge-actiu { background: var(--accent-orange); }
+.badge-finalitzat { background: #718096; }
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+}
+
+.vehicle-card img {
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
