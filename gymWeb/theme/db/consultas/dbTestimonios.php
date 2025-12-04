@@ -15,6 +15,18 @@ function getTestimonios() {
     return $res;
 }
 
+function getTreeLatestTestimonios() {
+    global $mysqli;
+    $stmt = $mysqli->prepare("SELECT * FROM TESTIMONIOS ORDER BY fecha DESC LIMIT 3");
+    if (!$stmt) {
+        die("Error en prepare: " . $mysqli->error);
+    }
+    $stmt->execute();
+    $res = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $stmt->close();
+    return $res;
+}
+
 
 function getTestimoniosById($id) {
     global $mysqli;

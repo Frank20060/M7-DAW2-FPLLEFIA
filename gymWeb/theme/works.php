@@ -16,24 +16,12 @@
   <h1 class="text-center justify-center m-4">Nuestros Trabajos</h1>
   <?php
     include_once './db/consultas/dbPortfolio.php';
-    $trabajos = getProyectos();
+    /// Mostrar las últimas 3 noticias como en el blog principal
+    $proyectos = getProyectos();
+    echo renderProyectosList($proyectos);
   ?>
 
-    <div class="row g-4 justify-content-center">
-      <?php foreach ($trabajos as $trabajo) { ?>
-        <div class="col-12 col-sm-6 col-lg-3 shuffle-item" data-groups='["branding"]'>
-          <div class="card text-light border-0 h-100 shadow-sm">
-            <img src="<?php echo $trabajo['imagen']; ?>" alt="project-image" class="card-img-top img-fluid">
-            <div class="card-body text-center px-3 py-4">
-              <h4 class="card-title h6 mb-2"><?php echo $trabajo['titulo']; ?></h4>
-              <p class="card-text small mb-0 text-muted"><?php echo $trabajo['descripcion']; ?></p>
-            </div>
-          </div>
-        </div>
-      <?php } ?>
-    </div>
-  </div>
-</section>
+  </section>
 <!-- /project -->
 
 <!-- call to action -->

@@ -1,28 +1,52 @@
-<?php include './includes/header.php';?>
+<?php
+include './includes/header.php';
+session_start();
+
+if (isset($_GET['id'])) {
+    $postId = (int) $_GET['id'];
+} else {
+    header("Location: ./blog.php");
+    exit();
+}
+
+include_once './db/consultas/dbPortfolio.php';
+
+
+?>
+
 <!-- page-title -->
 <section class="page-title bg-cover" data-background="images/backgrounds/page-title.jpg">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="display-1 text-white font-weight-bold font-primary">Nuestros Servicios</h1>
+        <h1 class="display-1 text-white font-weight-bold font-primary">Trabajos</h1>
       </div>
     </div>
   </div>
 </section>
 <!-- /page-title -->
-<section class="mt-4">
+
+<!-- Trabajo -->
+<section class="section">
   <?php
-    include_once './db/consultas/dbTestimonios.php';
-    /// Mostrar las últimas 3 noticias como en el blog principal
-    $Testimonios = getTestimonios();
-    echo renderTestimoniosList($Testimonios);
+    //Mostrar las Trabajoss con sus comentarios
+    $Trabajos = getProyectoById($postId);
+    echo renderProyectoDetail($Trabajos, $comments);
   ?>
+</section>
 
+<!-- BLOG (últimas Trabajoss) -->
 
+<?php
+  /// Mostrar las últimas 3 Trabajoss como en el blog principal
+  $Trabajoss = getProyectos();
+  echo renderProyectosList($Trabajoss);
+?>
 
+<section class="section">
+  
 
-
-<?php include './includes/footer.php';?>
+<?php include './includes/footer.php'; ?>
 
 <!-- jQuery -->
 <script src="plugins/jQuery/jquery.min.js"></script>

@@ -101,7 +101,7 @@ function renderProyectoDetail($proyecto) {
         $html .= '<a href="' . $proyecto['enlace_github'] . '" target="_blank" class="btn btn-sm btn-dark">Código en GitHub</a>';
     }
 
-    $html .= '<a href="portafolio.php" class="btn btn-sm btn-outline-secondary">Volver al portafolio</a>';
+    $html .= '<a href="works.php" class="btn btn-outline-secondary btn-sm mt-3">Volver a Trabajos</a>';
 
     $html .= '</div>'; // botones
     $html .= '</div>'; // card-body
