@@ -73,8 +73,8 @@ function editarVehiculo($id)
             die("Error en prepare: " . $mysqli->error);
         }
 
-        $stmt->bind_param("sssd sii", $nom, $tipus, $descripcio, $preu_dia, $imatge, $disponible, $id);
-        $stmt->bind_param("sssd sii", $nom, $tipus, $descripcio, $preu_dia, $imatge, $disponible, $id);
+        $stmt->bind_param("sssdsii", $nom, $tipus, $descripcio, $preu_dia, $imatge, $disponible, $id);
+        $stmt->bind_param("sssdsii", $nom, $tipus, $descripcio, $preu_dia, $imatge, $disponible, $id);
 
         // CORRECTO → "sssdsii"
         $stmt->bind_param("sssdsii", $nom, $tipus, $descripcio, $preu_dia, $imatge, $disponible, $id);
@@ -105,7 +105,7 @@ function getVehiclesDisponibles()
 {
     global $mysqli;
 
-    $sql = "SELECT * FROM vehicles WHERE disponible = 'Disponible'";
+    $sql = "SELECT * FROM vehicles WHERE disponible = 1";
     $result = $mysqli->query($sql);
 
     $vehicles = [];
