@@ -1,4 +1,59 @@
-<?php session_start(); ?>
+<?php
+session_start();
+include __DIR__ . './../dataBase/config/databaseConfig.php';
+
+$error = '';
+
+// Si ya está logueado, redirigir según rol
+if (isset($_SESSION['USER']) && isset($_SESSION['ROL'])) {
+    if ($_SESSION['ROL'] === 'client') {
+        header('Location: ../client/dashboard.php');
+        exit;
+    } elseif ($_SESSION['ROL'] === 'admin') {
+        header('Location: ../admin/dashboard.php');
+        exit;
+    }
+}
+
+// Procesar login
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $sql = "SELECT id, nom, cognoms, email, password, rol FROM usuaris WHERE email = ?";
+    $stmt = $mysqli->prepare($sql);
+    if (!$stmt) die("Error en prepare: " . $mysqli->error);
+
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $usuari = $result->fetch_assoc();
+    $stmt->close();
+
+    if ($usuari) {
+        // Verificar password
+        if (password_verify($password, $usuari['password'])) {
+            // Login OK
+            $_SESSION['USER'] = $usuari['id'];
+            $_SESSION['ROL'] = $usuari['rol'];
+            $_SESSION['NOM'] = $usuari['nom'];
+
+            if ($usuari['rol'] === 'client') {
+                header('Location: ../client/dashboard.php');
+            } else {
+                header('Location: ../admin/dashboard.php');
+            }
+            exit;
+        } else {
+            $error = "Contrasenya incorrecta.";
+        }
+    } else {
+        $error = "Usuari no trobat.";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -23,8 +78,12 @@
                     </div>
                     <div class="card-body p-4">
                         <h4 class="text-center mb-4">Iniciar Sessió</h4>
-                        
-                        <form action="process_login.php" method="POST">
+
+                        <?php if($error): ?>
+                            <div class="alert alert-danger"><?php echo $error; ?></div>
+                        <?php endif; ?>
+
+                        <form action="" method="POST">
                             <div class="mb-3">
                                 <label class="form-label">Email</label>
                                 <div class="input-group">

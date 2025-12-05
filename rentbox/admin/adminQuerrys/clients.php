@@ -12,7 +12,7 @@ function getUsuaris()
     if (!$stmt) {
         die("Error en prepare: " . $mysqli->error);
     }
-    
+
     $stmt->execute();
 
     $result = $stmt->get_result();
@@ -58,7 +58,7 @@ function crearUsuari()
         $cognoms = $_POST['cognoms'];
         $email = $_POST['email'];
         $password = $_POST['password'];   // cifrar fuera o aquí, como quieras
-        $rol = $_POST['rol'];
+        $rol = 'client';
         $foto = $_POST['foto'] ?? null;
 
         global $mysqli;
@@ -72,7 +72,9 @@ function crearUsuari()
             die("Error en prepare: " . $mysqli->error);
         }
 
-        $stmt->bind_param("ssssss", $nom, $cognoms, $email, $password, $rol, $foto);
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+
+        $stmt->bind_param("ssssss", $nom, $cognoms, $email, $hash, $rol, $foto);
         $stmt->execute();
         $stmt->close();
     }

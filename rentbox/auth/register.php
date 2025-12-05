@@ -1,4 +1,26 @@
-<?php session_start(); ?>
+<?php 
+    session_start(); 
+
+    if(isset($SESSION['USER']) && $SESSION['ROL'] == 'client' ){
+        header('Location : ../client/dashboard.php');
+    }
+
+    if(isset($SESSION['USER']) && $SESSION['ROL'] == 'admin' ){
+        header('Location : ../admin/dashboard.php');
+    }
+
+    include_once '../admin/adminQuerrys/clients.php';
+
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        crearUsuari();  
+
+        header("Location: ./login.php");
+    }
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -28,7 +50,7 @@
                         </div>
                         <?php endif; ?>
                         
-                        <form action="process_register.php" method="POST" enctype="multipart/form-data">
+                        <form action="register.php" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label">Nom</label>
@@ -48,8 +70,8 @@
                                 <input type="password" name="password" class="form-control" required minlength="6">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Foto (opcional)</label>
-                                <input type="file" name="foto" class="form-control" accept="image/*">
+                                <label class="form-label">Foto (URL)</label>
+                                <input type="text" name="foto" class="form-control">
                             </div>
                             <button type="submit" class="btn btn-orange w-100 py-2">
                                 <i class="bi bi-person-plus"></i> Registrar-se

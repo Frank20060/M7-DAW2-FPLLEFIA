@@ -15,15 +15,11 @@ session_start();
     <link href="../assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#"><i class="bi bi-car-front-fill me-2"></i>RentBox</a>
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><span class="nav-link"><i class="bi bi-person-circle"></i> <?php echo $_SESSION['nom'] ?? 'Admin'; ?></span></li>
-            <li class="nav-item"><a class="nav-link" href="../auth/logout.php"><i class="bi bi-box-arrow-right"></i> Sortir</a></li>
-        </ul>
-    </div>
-</nav>
+
+<?
+    include '../includes/nav.php';
+
+?>
 
 <div class="container-fluid">
     <div class="row">
