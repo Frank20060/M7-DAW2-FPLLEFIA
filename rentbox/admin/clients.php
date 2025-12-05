@@ -1,8 +1,12 @@
 <?php 
 session_start();
-//if(!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
-//    header('Location: ../error.php'); exit;
-//}
+if(!isset($_SESSION['ROL']) || $_SESSION['ROL'] !== 'admin') {
+    header('Location: ../error.php'); exit;
+
+    
+}
+include_once './adminQuerrys/clients.php';
+    $usuarios = getUsuaris();
 ?>
 <!DOCTYPE html>
 <html lang="ca">
@@ -50,57 +54,51 @@ session_start();
             
             <div class="card card-custom">
                 <div class="card-body">
-                    <table class="table table-custom table-hover">
-                        <thead>
-                            <tr><th>ID</th><th>Nom Complet</th><th>Email</th><th>Data Registre</th><th>Lloguers</th><th>Accions</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>2</td>
-                                <td>Joan Garcia Martínez</td>
-                                <td>joan@email.com</td>
-                                <td>01/11/2024</td>
-                                <td><span class="badge bg-primary">2</span></td>
-                                <td>
-                                    <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalEditClient"><i class="bi bi-pencil"></i></button>
-                                    <button class="btn btn-sm btn-outline-info"><i class="bi bi-eye"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Maria López Fernández</td>
-                                <td>maria@email.com</td>
-                                <td>05/11/2024</td>
-                                <td><span class="badge bg-primary">1</span></td>
-                                <td>
-                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
-                                    <button class="btn btn-sm btn-outline-info"><i class="bi bi-eye"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Pere Sánchez Vila</td>
-                                <td>pere@email.com</td>
-                                <td>10/11/2024</td>
-                                <td><span class="badge bg-primary">1</span></td>
-                                <td>
-                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
-                                    <button class="btn btn-sm btn-outline-info"><i class="bi bi-eye"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Laura Rodríguez Costa</td>
-                                <td>laura@email.com</td>
-                                <td>15/11/2024</td>
-                                <td><span class="badge bg-primary">1</span></td>
-                                <td>
-                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
-                                    <button class="btn btn-sm btn-outline-info"><i class="bi bi-eye"></i></button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nom</th>
+                            <th>Cognoms</th>
+                            <th>Email</th>
+                            <th>Rol</th>
+                            <th>Foto</th>
+                            <th>Data Registre</th>
+                            <th>Accions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($usuarios as $usuario): ?>
+                        <tr>
+                            <td><?= $usuario['id'] ?></td>
+                            <td><?= $usuario['nom'] ?></td>
+                            <td><?= $usuario['cognoms'] ?></td>
+                            <td><?= $usuario['email'] ?></td>
+                            <td>
+                                <span class="badge <?= $usuario['rol'] === 'admin' ? 'bg-danger' : 'bg-primary' ?>">
+                                    <?= ucfirst($usuario['rol']) ?>
+                                </span>
+                            </td>
+                            <td>
+                                <?php if($usuario['foto']): ?>
+                                    <img src="<?= $usuario['foto'] ?>" alt="Foto" width="40" class="rounded">
+                                <?php else: ?>
+                                    Sin foto
+                                <?php endif; ?>
+                            </td>
+                            <td><?= $usuario['data_registre'] ?></td>
+                            <td>
+                                <a href="editar_usuario.php?id=<?= $usuario['id'] ?>" class="btn btn-sm btn-outline-primary">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <a href="eliminar_usuario.php?id=<?= $usuario['id'] ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Seguro que quieres eliminar este usuario?')">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>        
                 </div>
             </div>
         </div>

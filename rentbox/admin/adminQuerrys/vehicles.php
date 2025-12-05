@@ -14,12 +14,11 @@ function getVehicle()
     }
     
     $stmt->execute();
-
     $result = $stmt->get_result();
-    $vehicles = $result->fetch_assoc();
+
+    $vehicles = $result->fetch_all(MYSQLI_ASSOC); // <-- devuelve todas las filas
 
     $stmt->close();
-
     return $vehicles;
 }
 
@@ -32,9 +31,9 @@ function crearVehicle()
         $nom = $_POST['nom'];
         $tipus = $_POST['tipus'];
         $descripcio = $_POST['descripcio'];
-        $preu_dia = $_POST['preu_dia'];      // decimal
+        $preu_dia = floatval($_POST['preu']); // convierte a decimal
         $imatge = $_POST['imatge'];
-        $disponible = $_POST['disponible'];  // boolean 0/1
+        $disponible = 1;  // boolean 0/1
 
         global $mysqli;
 
@@ -87,23 +86,34 @@ function editarVehiculo($id)
 
 function eliminarVehiculo($id)
 {
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    global $mysqli;
 
-        global $mysqli;
+    $sql = 'DELETE FROM vehicles WHERE id = ?';
+    $stmt = $mysqli->prepare($sql);
 
-        $sql = 'DELETE FROM vehicles WHERE id = ?';
-        $stmt = $mysqli->prepare($sql);
-
-        if (!$stmt) {
-            die("Error en prepare: " . $mysqli->error);
-        }
-
-        $stmt->bind_param("i", $id);
-        $stmt->execute();
-        $stmt->close();
+    if (!$stmt) {
+        die("Error en prepare: " . $mysqli->error);
     }
+
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $stmt->close();
+
 }
 
+function getVehiclesDisponibles()
+{
+    global $mysqli;
+
+    $sql = "SELECT * FROM vehicles WHERE disponible = 'Disponible'";
+    $result = $mysqli->query($sql);
+
+    $vehicles = [];
+    while ($row = $result->fetch_assoc()) {
+        $vehicles[] = $row;
+    }
+    return $vehicles;
+}
 
 
 /////Cambiar el estadooooo

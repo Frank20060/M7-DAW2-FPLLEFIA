@@ -1,9 +1,15 @@
 <?php 
 session_start();
-//if(!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
-//    header('Location: ../error.php'); exit;
-//}
+if(!isset($_SESSION['ROL']) || $_SESSION['ROL'] !== 'admin') {
+    header('Location: ../error.php'); exit;
+}
 include_once '../dataBase/config/databaseConfig.php';
+
+include_once './adminQuerrys/vehicles.php';
+
+
+$carros = getVehicle();
+
 
 ?>
 <!DOCTYPE html>
@@ -81,61 +87,27 @@ include_once '../dataBase/config/databaseConfig.php';
                             <tr><th>Imatge</th><th>Nom</th><th>Tipus</th><th>Preu/Dia</th><th>Estat</th><th>Accions</th></tr>
                         </thead>
                         <tbody>
+
+                        <?php foreach($carros as $carro): ?>
                             <tr>
-                                <td><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=60&h=40&fit=crop" class="rounded"></td>
-                                <td>Xiaomi Scooter Pro</td>
-                                <td>Patinet</td>
-                                <td>15€</td>
-                                <td><span class="badge badge-disponible">Disponible</span></td>
+                                <td><img src="<?= $carro['imatge'] ?>" class="rounded"></td>
+                                <td><?= $carro['nom'] ?></td>
+                                <td><?= $carro['tipus'] ?></td>
+                                <td><?= $carro['preu_dia'] ?>€</td>
                                 <td>
-                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
-                                    <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                                    <span class="badge <?= $carro['disponible'] ? 'bg-success' : 'bg-danger' ?>">
+                                        <?= $carro['disponible'] ? 'Disponible' : 'No Disponible' ?>
+                                    </span>
+                                </td>
+                                <td>
+                                    <a href="modificar.php"><button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button></a>
+                                    <a href="eliminarVehiculo.php?id=<?php echo $carro['id']; ?>">
+                                        <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                                    </a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td><img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=60&h=40&fit=crop" class="rounded"></td>
-                                <td>Bici Urbana City</td>
-                                <td>Bicicleta</td>
-                                <td>10€</td>
-                                <td><span class="badge badge-no-disponible">No disponible</span></td>
-                                <td>
-                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
-                                    <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=60&h=40&fit=crop" class="rounded"></td>
-                                <td>Moto Elèctrica NIU</td>
-                                <td>Moto</td>
-                                <td>25€</td>
-                                <td><span class="badge badge-disponible">Disponible</span></td>
-                                <td>
-                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
-                                    <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img src="https://images.unsplash.com/photo-1559320958-5f5179360a8b?w=60&h=40&fit=crop" class="rounded"></td>
-                                <td>Patinet Segway Max</td>
-                                <td>Patinet</td>
-                                <td>18€</td>
-                                <td><span class="badge badge-disponible">Disponible</span></td>
-                                <td>
-                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
-                                    <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=60&h=40&fit=crop" class="rounded"></td>
-                                <td>Bici Elèctrica Eco</td>
-                                <td>Bicicleta</td>
-                                <td>20€</td>
-                                <td><span class="badge badge-disponible">Disponible</span></td>
-                                <td>
-                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
-                                    <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-                                </td>
-                            </tr>
+                        <?php endforeach; ?>
+
                         </tbody>
                     </table>
                 </div>
@@ -151,7 +123,7 @@ include_once '../dataBase/config/databaseConfig.php';
                 <h5 class="modal-title"><i class="bi bi-car-front"></i> Nou Vehicle</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
-            <form action="process_vehicle.php" method="POST" enctype="multipart/form-data">
+            <form action="./crear_vhicle.php" method="POST" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="mb-3">
                         <label class="form-label">Nom del Vehicle</label>
@@ -170,8 +142,8 @@ include_once '../dataBase/config/databaseConfig.php';
                         <input type="number" name="preu" class="form-control" step="0.01" required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Imatge</label>
-                        <input type="file" name="imatge" class="form-control" accept="image/*">
+                        <label class="form-label">Imatge URL</label>
+                        <input type="text" name="imatge" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Descripció</label>

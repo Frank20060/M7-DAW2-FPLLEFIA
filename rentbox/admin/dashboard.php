@@ -1,9 +1,21 @@
 <?php 
 session_start();
-//if(!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
-//    header('Location: ../error.php'); exit;
-//}
+if(!isset($_SESSION['ROL']) || $_SESSION['ROL'] !== 'admin') {
+    header('Location: ../error.php'); exit;
+}
 include_once '../dataBase/config/databaseConfig.php';
+include_once './adminQuerrys/vehicles.php';
+$carros = getVehicle();
+
+include_once './adminQuerrys/lloguers.php';
+$llogers = getAllLloguers();
+
+include_once './adminQuerrys/clients.php';
+$usuarios = getUsuaris();
+
+include_once './adminQuerrys/vehicles.php';
+$llogersActius = getLloguersActius();
+
 
 ?>
 <!DOCTYPE html>
@@ -47,7 +59,7 @@ include_once '../dataBase/config/databaseConfig.php';
                         <div class="card-body d-flex align-items-center">
                             <i class="bi bi-car-front stat-icon me-3"></i>
                             <div>
-                                <h3 class="mb-0">5</h3>
+                                <h3 class="mb-0"><?php echo count($carros);?></h3>
                                 <small class="text-muted">Vehicles</small>
                             </div>
                         </div>
@@ -58,7 +70,7 @@ include_once '../dataBase/config/databaseConfig.php';
                         <div class="card-body d-flex align-items-center">
                             <i class="bi bi-people stat-icon me-3"></i>
                             <div>
-                                <h3 class="mb-0">4</h3>
+                                <h3 class="mb-0"><?php echo count($usuarios);?></h3>
                                 <small class="text-muted">Clients</small>
                             </div>
                         </div>
@@ -69,8 +81,8 @@ include_once '../dataBase/config/databaseConfig.php';
                         <div class="card-body d-flex align-items-center">
                             <i class="bi bi-calendar-check stat-icon me-3"></i>
                             <div>
-                                <h3 class="mb-0">2</h3>
-                                <small class="text-muted">Lloguers Actius</small>
+                                <h3 class="mb-0"><?php echo count($llogers);?></h3>
+                                <small class="text-muted">Lloguers historic</small>
                             </div>
                         </div>
                     </div>
@@ -80,8 +92,8 @@ include_once '../dataBase/config/databaseConfig.php';
                         <div class="card-body d-flex align-items-center">
                             <i class="bi bi-check-circle stat-icon me-3"></i>
                             <div>
-                                <h3 class="mb-0">4</h3>
-                                <small class="text-muted">Disponibles</small>
+                                <h3 class="mb-0"><?php echo count($llogersActius);?></h3>
+                                <small class="text-muted">Lloguers actius</small>
                             </div>
                         </div>
                     </div>
@@ -90,38 +102,37 @@ include_once '../dataBase/config/databaseConfig.php';
             
             <div class="card card-custom">
                 <div class="card-header card-header-custom">
-                    <i class="bi bi-clock-history"></i> Últims Lloguers
+                    <i class="bi bi-clock-history"></i> Lloguers Actius
                 </div>
                 <div class="card-body">
                     <table class="table table-custom table-hover">
                         <thead>
-                            <tr><th>Client</th><th>Vehicle</th><th>Data Inici</th><th>Estat</th></tr>
+                            <tr>
+                                <th>Usuari</th>
+                                <th>Vehicle</th>
+                                <th>Data Inici</th>
+                                <th>Data Fi</th>
+                                <th>Estat</th>
+                                <th>Preu Total</th>
+                            </tr>
                         </thead>
                         <tbody>
+
+                        <?php foreach($llogersActius as $lloguer): ?>
                             <tr>
-                                <td>Joan Garcia</td>
-                                <td>Xiaomi Scooter Pro</td>
-                                <td>01/12/2024</td>
-                                <td><span class="badge badge-actiu">Actiu</span></td>
+                                <td><?= $lloguer['usuari'] ?></td>
+                                <td><?= $lloguer['vehicle'] ?></td>
+                                <td><?= $lloguer['data_inici'] ?></td>
+                                <td><?= $lloguer['data_fi'] ?></td>
+                                <td>
+                                    <span class="badge <?= $lloguer['estat'] === 'actiu' ? 'bg-success' : 'bg-secondary' ?>">
+                                        <?= $lloguer['estat'] ?>
+                                    </span>
+                                </td>
+                                <td><?= $lloguer['preu_total'] ?>€</td>
                             </tr>
-                            <tr>
-                                <td>Maria López</td>
-                                <td>Bici Urbana City</td>
-                                <td>03/12/2024</td>
-                                <td><span class="badge badge-pendent">Pendent</span></td>
-                            </tr>
-                            <tr>
-                                <td>Pere Sánchez</td>
-                                <td>Moto Elèctrica NIU</td>
-                                <td>20/11/2024</td>
-                                <td><span class="badge badge-finalitzat">Finalitzat</span></td>
-                            </tr>
-                            <tr>
-                                <td>Laura Rodríguez</td>
-                                <td>Patinet Segway Max</td>
-                                <td>02/12/2024</td>
-                                <td><span class="badge badge-actiu">Actiu</span></td>
-                            </tr>
+                        <?php endforeach; ?>
+
                         </tbody>
                     </table>
                 </div>

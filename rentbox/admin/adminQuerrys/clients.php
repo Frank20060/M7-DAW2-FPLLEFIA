@@ -16,7 +16,7 @@ function getUsuaris()
     $stmt->execute();
 
     $result = $stmt->get_result();
-    $usuari = $result->fetch_assoc();
+    $usuari = $result->fetch_all(MYSQLI_ASSOC);
 
     $stmt->close();
 

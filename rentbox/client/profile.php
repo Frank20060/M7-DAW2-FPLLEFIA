@@ -1,8 +1,8 @@
 <?php 
 session_start();
-//if(!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'client') {
-//    header('Location: ../error.php'); exit;
-//}
+if(!isset($_SESSION['ROL']) || $_SESSION['ROL'] !== 'client') {
+    header('Location: ../error.php'); exit;
+}
 include_once '../dataBase/config/databaseConfig.php';
 
 ?>

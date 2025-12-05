@@ -74,3 +74,20 @@ function getAllLloguers()
 
     return $lloguers;
 }
+
+function getLloguersActius()
+{
+    global $mysqli;
+
+    $sql = "SELECT l.id, u.nom AS usuari, v.nom AS vehicle, l.data_inici, l.data_fi, l.estat, l.preu_total, l.data_creacio
+            FROM lloguers l JOIN usuaris u ON l.usuari_id = u.id JOIN vehicles v ON l.vehicle_id = v.id WHERE estat = 'actiu' ORDER BY l.data_creacio DESC";
+
+    $result = $mysqli->query($sql);
+
+    $lloguers = [];
+    while ($row = $result->fetch_assoc()) {
+        $lloguers[] = $row;
+    }
+
+    return $lloguers;
+}

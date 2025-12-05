@@ -66,8 +66,8 @@ body {
     color: var(--white);
 }
 
-.badge-disponible { background: #48bb78; }
-.badge-no-disponible { background: #f56565; }
+.badge-1 { background: #48bb78; }
+.badge-0 { background: #f56565; }
 .badge-actiu { background: var(--accent-orange); }
 .badge-finalitzat { background: #718096; }
 
@@ -82,4 +82,13 @@ body {
     height: 180px;
     object-fit: cover;
     border-radius: 15px 15px 0 0;
+}
+
+table img{
+    width: 100px;
+    height: 100px;
+}
+tr{
+    
+    align-content: center;
 }
