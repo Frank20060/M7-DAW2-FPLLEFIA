@@ -3,6 +3,8 @@ session_start();
 //if(!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'client') {
 //    header('Location: ../error.php'); exit;
 //}
+include '../dataBase/config/databaseConfig.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="ca">

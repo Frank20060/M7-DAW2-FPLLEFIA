@@ -1,12 +1,11 @@
 <?php
-
     include __DIR__ . '../config/databaseConfig.php';
 
 
 
-    function getVheicles(){
+    function getVehiclesDisponibles(){
         global $mysqli;
-        $sql = 'SELECT * FROM vehicles ';
+        $sql = 'SELECT * FROM vehicles where disponible = 1';
         $stmt = $mysqli->prepare($sql);
         if (!$stmt) {
             die("Error en prepare: " . $mysqli->error);
@@ -16,3 +15,4 @@
         $stmt->close();
         return $res;
     }
+
